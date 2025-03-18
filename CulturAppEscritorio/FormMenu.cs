@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace CulturAppEscritorio
 {
-    public partial class Form1 : Form
+    public partial class FormMenu : Form
     {
-        public Form1()
+        public FormMenu()
         {
             InitializeComponent();
-        }
-
-        private void roundedButtonLogin_Click(object sender, EventArgs e)
-        {
-            FormMenu form = new FormMenu();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
         }
     }
 }

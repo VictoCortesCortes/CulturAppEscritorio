@@ -92,6 +92,7 @@
             this.roundedButtonLogin.TabIndex = 3;
             this.roundedButtonLogin.Text = "Entrar";
             this.roundedButtonLogin.UseVisualStyleBackColor = false;
+            this.roundedButtonLogin.Click += new System.EventHandler(this.roundedButtonLogin_Click);
             // 
             // roundedTextBoxPass
             // 
