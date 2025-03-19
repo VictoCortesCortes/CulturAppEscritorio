@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManageEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManageEvents.Designer.cs">
+      <DependentUpon>FormManageEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManageTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageEvents.resx">
+      <DependentUpon>FormManageEvents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageTickets.resx">
       <DependentUpon>FormManageTickets.cs</DependentUpon>
