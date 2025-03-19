@@ -73,6 +73,12 @@
     <Compile Include="FormManageEvents.Designer.cs">
       <DependentUpon>FormManageEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManageRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManageRooms.Designer.cs">
+      <DependentUpon>FormManageRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManageTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageEvents.resx">
       <DependentUpon>FormManageEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageRooms.resx">
+      <DependentUpon>FormManageRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageTickets.resx">
       <DependentUpon>FormManageTickets.cs</DependentUpon>
