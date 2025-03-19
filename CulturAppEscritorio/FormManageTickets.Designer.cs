@@ -1,6 +1,6 @@
 ﻿namespace CulturAppEscritorio
 {
-    partial class FormManageUsers
+    partial class FormManageTickets
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridView dataGridViewUsers;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customPanel1 = new GigFinder.Controls.CustomPanel();
-            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customComboBoxFilter = new GigFinder.Controls.CustomComboBox();
             this.customComboBoxOrder = new GigFinder.Controls.CustomComboBox();
             this.roundedButtonDelete = new GigFinder.Controls.RoundedButton();
             this.roundedButtonEdit = new GigFinder.Controls.RoundedButton();
             this.roundedButtonCreate = new GigFinder.Controls.RoundedButton();
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.customPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,23 +54,23 @@
             // 
             this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.customPanel1.BorderRadius = 8;
-            this.customPanel1.Controls.Add(this.dataGridViewUsers);
-            this.customPanel1.Location = new System.Drawing.Point(20, 189);
+            this.customPanel1.Controls.Add(dataGridViewUsers);
+            this.customPanel1.Location = new System.Drawing.Point(21, 190);
             this.customPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
             this.customPanel1.Size = new System.Drawing.Size(1148, 454);
-            this.customPanel1.TabIndex = 24;
+            this.customPanel1.TabIndex = 32;
             // 
             // dataGridViewUsers
             // 
-            this.dataGridViewUsers.AllowUserToAddRows = false;
-            this.dataGridViewUsers.AllowUserToDeleteRows = false;
-            this.dataGridViewUsers.AllowUserToResizeRows = false;
-            this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewUsers.AllowUserToAddRows = false;
+            dataGridViewUsers.AllowUserToDeleteRows = false;
+            dataGridViewUsers.AllowUserToResizeRows = false;
+            dataGridViewUsers.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Alkatra", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,10 +78,10 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewUsers.ColumnHeadersHeight = 35;
-            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewUsers.ColumnHeadersHeight = 35;
+            dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -89,19 +89,19 @@
             this.Column5});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUsers.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewUsers.EnableHeadersVisualStyles = false;
-            this.dataGridViewUsers.GridColor = System.Drawing.Color.White;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(6, 0);
-            this.dataGridViewUsers.MultiSelect = false;
-            this.dataGridViewUsers.Name = "dataGridViewUsers";
-            this.dataGridViewUsers.ReadOnly = true;
+            dataGridViewUsers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewUsers.EnableHeadersVisualStyles = false;
+            dataGridViewUsers.GridColor = System.Drawing.Color.White;
+            dataGridViewUsers.Location = new System.Drawing.Point(6, 0);
+            dataGridViewUsers.MultiSelect = false;
+            dataGridViewUsers.Name = "dataGridViewUsers";
+            dataGridViewUsers.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,12 +109,12 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewUsers.RowHeadersVisible = false;
-            this.dataGridViewUsers.RowTemplate.Height = 25;
-            this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1136, 446);
-            this.dataGridViewUsers.TabIndex = 0;
+            dataGridViewUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewUsers.RowHeadersVisible = false;
+            dataGridViewUsers.RowTemplate.Height = 25;
+            dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewUsers.Size = new System.Drawing.Size(1136, 446);
+            dataGridViewUsers.TabIndex = 0;
             // 
             // Column1
             // 
@@ -152,25 +152,6 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // customComboBoxFilter
-            // 
-            this.customComboBoxFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
-            this.customComboBoxFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
-            this.customComboBoxFilter.BorderSize = 1;
-            this.customComboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.customComboBoxFilter.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customComboBoxFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.customComboBoxFilter.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.customComboBoxFilter.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
-            this.customComboBoxFilter.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.customComboBoxFilter.Location = new System.Drawing.Point(20, 130);
-            this.customComboBoxFilter.MinimumSize = new System.Drawing.Size(100, 30);
-            this.customComboBoxFilter.Name = "customComboBoxFilter";
-            this.customComboBoxFilter.Padding = new System.Windows.Forms.Padding(1);
-            this.customComboBoxFilter.Size = new System.Drawing.Size(150, 42);
-            this.customComboBoxFilter.TabIndex = 23;
-            this.customComboBoxFilter.Texts = "Filtrar por";
-            // 
             // customComboBoxOrder
             // 
             this.customComboBoxOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
@@ -182,12 +163,12 @@
             this.customComboBoxOrder.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.customComboBoxOrder.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
             this.customComboBoxOrder.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.customComboBoxOrder.Location = new System.Drawing.Point(176, 131);
+            this.customComboBoxOrder.Location = new System.Drawing.Point(27, 131);
             this.customComboBoxOrder.MinimumSize = new System.Drawing.Size(100, 30);
             this.customComboBoxOrder.Name = "customComboBoxOrder";
             this.customComboBoxOrder.Padding = new System.Windows.Forms.Padding(1);
             this.customComboBoxOrder.Size = new System.Drawing.Size(162, 42);
-            this.customComboBoxOrder.TabIndex = 22;
+            this.customComboBoxOrder.TabIndex = 30;
             this.customComboBoxOrder.Texts = "Ordenar por";
             // 
             // roundedButtonDelete
@@ -200,10 +181,10 @@
             this.roundedButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonDelete.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonDelete.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonDelete.Location = new System.Drawing.Point(1019, 130);
+            this.roundedButtonDelete.Location = new System.Drawing.Point(1020, 131);
             this.roundedButtonDelete.Name = "roundedButtonDelete";
             this.roundedButtonDelete.Size = new System.Drawing.Size(150, 40);
-            this.roundedButtonDelete.TabIndex = 21;
+            this.roundedButtonDelete.TabIndex = 29;
             this.roundedButtonDelete.Text = "Eliminar";
             this.roundedButtonDelete.UseVisualStyleBackColor = false;
             // 
@@ -217,10 +198,10 @@
             this.roundedButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonEdit.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.roundedButtonEdit.Location = new System.Drawing.Point(863, 130);
+            this.roundedButtonEdit.Location = new System.Drawing.Point(864, 131);
             this.roundedButtonEdit.Name = "roundedButtonEdit";
             this.roundedButtonEdit.Size = new System.Drawing.Size(150, 40);
-            this.roundedButtonEdit.TabIndex = 20;
+            this.roundedButtonEdit.TabIndex = 28;
             this.roundedButtonEdit.Text = "Editar";
             this.roundedButtonEdit.UseVisualStyleBackColor = false;
             // 
@@ -234,10 +215,10 @@
             this.roundedButtonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonCreate.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.roundedButtonCreate.Location = new System.Drawing.Point(707, 130);
+            this.roundedButtonCreate.Location = new System.Drawing.Point(708, 131);
             this.roundedButtonCreate.Name = "roundedButtonCreate";
             this.roundedButtonCreate.Size = new System.Drawing.Size(150, 40);
-            this.roundedButtonCreate.TabIndex = 19;
+            this.roundedButtonCreate.TabIndex = 27;
             this.roundedButtonCreate.Text = "Crear";
             this.roundedButtonCreate.UseVisualStyleBackColor = false;
             // 
@@ -245,41 +226,40 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Alkatra", 50.24999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(7, 3);
+            this.labelTitle.Location = new System.Drawing.Point(8, 3);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(620, 116);
-            this.labelTitle.TabIndex = 18;
-            this.labelTitle.Text = "Gestión de usuarios";
+            this.labelTitle.Size = new System.Drawing.Size(615, 116);
+            this.labelTitle.TabIndex = 26;
+            this.labelTitle.Text = "Gestión de reservas";
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogo.BackgroundImage = global::CulturAppEscritorio.Properties.Resources.logo;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(1061, 16);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1062, 17);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(115, 90);
-            this.pictureBoxLogo.TabIndex = 17;
+            this.pictureBoxLogo.TabIndex = 25;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // FormManageUsers
+            // FormManageTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.customComboBoxFilter);
             this.Controls.Add(this.customComboBoxOrder);
             this.Controls.Add(this.roundedButtonDelete);
             this.Controls.Add(this.roundedButtonEdit);
             this.Controls.Add(this.roundedButtonCreate);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Name = "FormManageUsers";
-            this.Text = "FormManageUsers";
+            this.Name = "FormManageTickets";
+            this.Text = "FormManageTickets";
             this.customPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(dataGridViewUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,13 +269,11 @@
         #endregion
 
         private GigFinder.Controls.CustomPanel customPanel1;
-        private System.Windows.Forms.DataGridView dataGridViewUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private GigFinder.Controls.CustomComboBox customComboBoxFilter;
         private GigFinder.Controls.CustomComboBox customComboBoxOrder;
         private GigFinder.Controls.RoundedButton roundedButtonDelete;
         private GigFinder.Controls.RoundedButton roundedButtonEdit;
