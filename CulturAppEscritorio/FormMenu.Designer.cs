@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.customPanelLogin = new GigFinder.Controls.CustomPanel();
-            this.customPanelStats = new GigFinder.Controls.CustomPanel();
+            this.customPanelEvents = new GigFinder.Controls.CustomPanel();
             this.pictureBoxEvents = new System.Windows.Forms.PictureBox();
-            this.customPanelRegister = new GigFinder.Controls.CustomPanel();
+            this.customPanelRooms = new GigFinder.Controls.CustomPanel();
             this.pictureBoxRooms = new System.Windows.Forms.PictureBox();
-            this.customPanelData = new GigFinder.Controls.CustomPanel();
+            this.customPanelTikets = new GigFinder.Controls.CustomPanel();
             this.pictureBoxTikets = new System.Windows.Forms.PictureBox();
             this.customPanelUsers = new GigFinder.Controls.CustomPanel();
             this.pictureBoxUsers = new System.Windows.Forms.PictureBox();
             this.customPanelLogin.SuspendLayout();
-            this.customPanelStats.SuspendLayout();
+            this.customPanelEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEvents)).BeginInit();
-            this.customPanelRegister.SuspendLayout();
+            this.customPanelRooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).BeginInit();
-            this.customPanelData.SuspendLayout();
+            this.customPanelTikets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTikets)).BeginInit();
             this.customPanelUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsers)).BeginInit();
@@ -52,24 +52,25 @@
             // 
             this.customPanelLogin.BackColor = System.Drawing.Color.White;
             this.customPanelLogin.BorderRadius = 8;
-            this.customPanelLogin.Controls.Add(this.customPanelStats);
-            this.customPanelLogin.Controls.Add(this.customPanelRegister);
-            this.customPanelLogin.Controls.Add(this.customPanelData);
+            this.customPanelLogin.Controls.Add(this.customPanelEvents);
+            this.customPanelLogin.Controls.Add(this.customPanelRooms);
+            this.customPanelLogin.Controls.Add(this.customPanelTikets);
             this.customPanelLogin.Controls.Add(this.customPanelUsers);
             this.customPanelLogin.Location = new System.Drawing.Point(292, 55);
             this.customPanelLogin.Name = "customPanelLogin";
             this.customPanelLogin.Size = new System.Drawing.Size(600, 550);
             this.customPanelLogin.TabIndex = 2;
             // 
-            // customPanelStats
+            // customPanelEvents
             // 
-            this.customPanelStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
-            this.customPanelStats.BorderRadius = 8;
-            this.customPanelStats.Controls.Add(this.pictureBoxEvents);
-            this.customPanelStats.Location = new System.Drawing.Point(60, 300);
-            this.customPanelStats.Name = "customPanelStats";
-            this.customPanelStats.Size = new System.Drawing.Size(200, 200);
-            this.customPanelStats.TabIndex = 3;
+            this.customPanelEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
+            this.customPanelEvents.BorderRadius = 8;
+            this.customPanelEvents.Controls.Add(this.pictureBoxEvents);
+            this.customPanelEvents.Location = new System.Drawing.Point(60, 300);
+            this.customPanelEvents.Name = "customPanelEvents";
+            this.customPanelEvents.Size = new System.Drawing.Size(200, 200);
+            this.customPanelEvents.TabIndex = 3;
+            this.customPanelEvents.Click += new System.EventHandler(this.customPanelEvents_Click);
             // 
             // pictureBoxEvents
             // 
@@ -81,16 +82,18 @@
             this.pictureBoxEvents.Size = new System.Drawing.Size(125, 144);
             this.pictureBoxEvents.TabIndex = 3;
             this.pictureBoxEvents.TabStop = false;
+            this.pictureBoxEvents.Click += new System.EventHandler(this.pictureBoxEvents_Click);
             // 
-            // customPanelRegister
+            // customPanelRooms
             // 
-            this.customPanelRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
-            this.customPanelRegister.BorderRadius = 8;
-            this.customPanelRegister.Controls.Add(this.pictureBoxRooms);
-            this.customPanelRegister.Location = new System.Drawing.Point(340, 300);
-            this.customPanelRegister.Name = "customPanelRegister";
-            this.customPanelRegister.Size = new System.Drawing.Size(200, 200);
-            this.customPanelRegister.TabIndex = 3;
+            this.customPanelRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
+            this.customPanelRooms.BorderRadius = 8;
+            this.customPanelRooms.Controls.Add(this.pictureBoxRooms);
+            this.customPanelRooms.Location = new System.Drawing.Point(340, 300);
+            this.customPanelRooms.Name = "customPanelRooms";
+            this.customPanelRooms.Size = new System.Drawing.Size(200, 200);
+            this.customPanelRooms.TabIndex = 3;
+            this.customPanelRooms.Click += new System.EventHandler(this.customPanelRooms_Click);
             // 
             // pictureBoxRooms
             // 
@@ -102,16 +105,18 @@
             this.pictureBoxRooms.Size = new System.Drawing.Size(125, 144);
             this.pictureBoxRooms.TabIndex = 4;
             this.pictureBoxRooms.TabStop = false;
+            this.pictureBoxRooms.Click += new System.EventHandler(this.pictureBoxRooms_Click);
             // 
-            // customPanelData
+            // customPanelTikets
             // 
-            this.customPanelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
-            this.customPanelData.BorderRadius = 8;
-            this.customPanelData.Controls.Add(this.pictureBoxTikets);
-            this.customPanelData.Location = new System.Drawing.Point(340, 50);
-            this.customPanelData.Name = "customPanelData";
-            this.customPanelData.Size = new System.Drawing.Size(200, 200);
-            this.customPanelData.TabIndex = 3;
+            this.customPanelTikets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
+            this.customPanelTikets.BorderRadius = 8;
+            this.customPanelTikets.Controls.Add(this.pictureBoxTikets);
+            this.customPanelTikets.Location = new System.Drawing.Point(340, 50);
+            this.customPanelTikets.Name = "customPanelTikets";
+            this.customPanelTikets.Size = new System.Drawing.Size(200, 200);
+            this.customPanelTikets.TabIndex = 3;
+            this.customPanelTikets.Click += new System.EventHandler(this.customPanelTikets_Click);
             // 
             // pictureBoxTikets
             // 
@@ -123,6 +128,7 @@
             this.pictureBoxTikets.Size = new System.Drawing.Size(125, 144);
             this.pictureBoxTikets.TabIndex = 2;
             this.pictureBoxTikets.TabStop = false;
+            this.pictureBoxTikets.Click += new System.EventHandler(this.pictureBoxTikets_Click);
             // 
             // customPanelUsers
             // 
@@ -133,6 +139,7 @@
             this.customPanelUsers.Name = "customPanelUsers";
             this.customPanelUsers.Size = new System.Drawing.Size(200, 200);
             this.customPanelUsers.TabIndex = 2;
+            this.customPanelUsers.Click += new System.EventHandler(this.customPanelUsers_Click);
             // 
             // pictureBoxUsers
             // 
@@ -144,6 +151,7 @@
             this.pictureBoxUsers.Size = new System.Drawing.Size(125, 144);
             this.pictureBoxUsers.TabIndex = 1;
             this.pictureBoxUsers.TabStop = false;
+            this.pictureBoxUsers.Click += new System.EventHandler(this.pictureBoxUsers_Click);
             // 
             // FormMenu
             // 
@@ -159,11 +167,11 @@
             this.Name = "FormMenu";
             this.Text = "FormMenu";
             this.customPanelLogin.ResumeLayout(false);
-            this.customPanelStats.ResumeLayout(false);
+            this.customPanelEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEvents)).EndInit();
-            this.customPanelRegister.ResumeLayout(false);
+            this.customPanelRooms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).EndInit();
-            this.customPanelData.ResumeLayout(false);
+            this.customPanelTikets.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTikets)).EndInit();
             this.customPanelUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsers)).EndInit();
@@ -174,11 +182,11 @@
         #endregion
 
         private GigFinder.Controls.CustomPanel customPanelLogin;
-        private GigFinder.Controls.CustomPanel customPanelStats;
+        private GigFinder.Controls.CustomPanel customPanelEvents;
         private System.Windows.Forms.PictureBox pictureBoxEvents;
-        private GigFinder.Controls.CustomPanel customPanelRegister;
+        private GigFinder.Controls.CustomPanel customPanelRooms;
         private System.Windows.Forms.PictureBox pictureBoxRooms;
-        private GigFinder.Controls.CustomPanel customPanelData;
+        private GigFinder.Controls.CustomPanel customPanelTikets;
         private System.Windows.Forms.PictureBox pictureBoxTikets;
         private GigFinder.Controls.CustomPanel customPanelUsers;
         private System.Windows.Forms.PictureBox pictureBoxUsers;

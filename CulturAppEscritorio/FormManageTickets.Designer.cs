@@ -55,7 +55,7 @@
             this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.customPanel1.BorderRadius = 8;
             this.customPanel1.Controls.Add(dataGridViewTickets);
-            this.customPanel1.Location = new System.Drawing.Point(19, 190);
+            this.customPanel1.Location = new System.Drawing.Point(19, 191);
             this.customPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
@@ -163,7 +163,7 @@
             this.customComboBoxOrder.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.customComboBoxOrder.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
             this.customComboBoxOrder.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.customComboBoxOrder.Location = new System.Drawing.Point(25, 131);
+            this.customComboBoxOrder.Location = new System.Drawing.Point(25, 132);
             this.customComboBoxOrder.MinimumSize = new System.Drawing.Size(100, 30);
             this.customComboBoxOrder.Name = "customComboBoxOrder";
             this.customComboBoxOrder.Padding = new System.Windows.Forms.Padding(1);
@@ -181,7 +181,7 @@
             this.roundedButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonDelete.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonDelete.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonDelete.Location = new System.Drawing.Point(1018, 131);
+            this.roundedButtonDelete.Location = new System.Drawing.Point(1018, 132);
             this.roundedButtonDelete.Name = "roundedButtonDelete";
             this.roundedButtonDelete.Size = new System.Drawing.Size(150, 40);
             this.roundedButtonDelete.TabIndex = 29;
@@ -198,7 +198,7 @@
             this.roundedButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonEdit.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.roundedButtonEdit.Location = new System.Drawing.Point(862, 131);
+            this.roundedButtonEdit.Location = new System.Drawing.Point(862, 132);
             this.roundedButtonEdit.Name = "roundedButtonEdit";
             this.roundedButtonEdit.Size = new System.Drawing.Size(150, 40);
             this.roundedButtonEdit.TabIndex = 28;
@@ -215,7 +215,7 @@
             this.roundedButtonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonCreate.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.roundedButtonCreate.Location = new System.Drawing.Point(706, 131);
+            this.roundedButtonCreate.Location = new System.Drawing.Point(706, 132);
             this.roundedButtonCreate.Name = "roundedButtonCreate";
             this.roundedButtonCreate.Size = new System.Drawing.Size(150, 40);
             this.roundedButtonCreate.TabIndex = 27;
@@ -226,7 +226,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Alkatra", 50.24999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(6, 3);
+            this.labelTitle.Location = new System.Drawing.Point(6, 4);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(615, 116);
             this.labelTitle.TabIndex = 26;
@@ -237,7 +237,7 @@
             this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogo.BackgroundImage = global::CulturAppEscritorio.Properties.Resources.logo;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(1060, 17);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1060, 18);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(115, 90);
             this.pictureBoxLogo.TabIndex = 25;
