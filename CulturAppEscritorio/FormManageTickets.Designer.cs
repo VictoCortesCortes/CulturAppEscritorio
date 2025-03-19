@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.customPanel1 = new GigFinder.Controls.CustomPanel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customPanel1 = new GigFinder.Controls.CustomPanel();
             this.customComboBoxOrder = new GigFinder.Controls.CustomComboBox();
             this.roundedButtonDelete = new GigFinder.Controls.RoundedButton();
             this.roundedButtonEdit = new GigFinder.Controls.RoundedButton();
@@ -45,22 +45,10 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             dataGridViewTickets = new System.Windows.Forms.DataGridView();
-            this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(dataGridViewTickets)).BeginInit();
+            this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.customPanel1.BorderRadius = 8;
-            this.customPanel1.Controls.Add(dataGridViewTickets);
-            this.customPanel1.Location = new System.Drawing.Point(19, 191);
-            this.customPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
-            this.customPanel1.Size = new System.Drawing.Size(1148, 454);
-            this.customPanel1.TabIndex = 32;
             // 
             // dataGridViewTickets
             // 
@@ -151,6 +139,18 @@
             this.Column5.HeaderText = "Password";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.customPanel1.BorderRadius = 8;
+            this.customPanel1.Controls.Add(dataGridViewTickets);
+            this.customPanel1.Location = new System.Drawing.Point(19, 191);
+            this.customPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
+            this.customPanel1.Size = new System.Drawing.Size(1148, 454);
+            this.customPanel1.TabIndex = 32;
             // 
             // customComboBoxOrder
             // 
@@ -256,10 +256,12 @@
             this.Controls.Add(this.roundedButtonCreate);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.pictureBoxLogo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormManageTickets";
             this.Text = "FormManageTickets";
-            this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(dataGridViewTickets)).EndInit();
+            this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
