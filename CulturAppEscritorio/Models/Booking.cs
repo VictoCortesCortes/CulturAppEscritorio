@@ -7,18 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CulturAppEscritorio.Modules
+namespace CulturAppEscritorio.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Inventory_room
+    public partial class Booking
     {
-        public int room_id { get; set; }
-        public int inventory_id { get; set; }
+        public int user_id { get; set; }
+        public int event_id { get; set; }
         public int quantity { get; set; }
+        public Nullable<bool> active { get; set; }
     
-        public virtual Inventory Inventory { get; set; }
-        public virtual Rooms Rooms { get; set; }
+        public virtual Events Events { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

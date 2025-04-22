@@ -7,25 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CulturAppEscritorio.Modules
+namespace CulturAppEscritorio.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Inventory
+    public partial class Type_event
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Inventory()
+        public Type_event()
         {
-            this.Inventory_room = new HashSet<Inventory_room>();
+            this.Events = new HashSet<Events>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
-        public string description { get; set; }
-        public int quantity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Inventory_room> Inventory_room { get; set; }
+        public virtual ICollection<Events> Events { get; set; }
     }
 }

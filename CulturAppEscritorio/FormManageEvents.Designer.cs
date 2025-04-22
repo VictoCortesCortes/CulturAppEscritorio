@@ -259,6 +259,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormManageEvents";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManageEvents";
             ((System.ComponentModel.ISupportInitialize)(dataGridViewEvents)).EndInit();
             this.customPanel1.ResumeLayout(false);

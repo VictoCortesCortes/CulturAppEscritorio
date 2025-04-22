@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CulturAppEscritorio.Models;
 
 namespace CulturAppEscritorio
 {
@@ -15,6 +16,11 @@ namespace CulturAppEscritorio
         public FormManageUsers()
         {
             InitializeComponent();
+        }
+
+        private void FormManageUsers_Load(object sender, EventArgs e)
+        {
+            bindingSourceUsers.DataSource = UsersOrm.SelectGlobal();
         }
     }
 }

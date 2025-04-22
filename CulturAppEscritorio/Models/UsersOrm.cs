@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GigFinder.Models;
+using CulturAppEscritorio.Models;
 
-namespace CulturAppEscritorio.Modules
+namespace CulturAppEscritorio.Models
 {
     public static class UsersOrm
     {
@@ -18,6 +18,14 @@ namespace CulturAppEscritorio.Modules
                         select user).FirstOrDefault();
 
             return _user;
+        }
+
+        public static List<Users> SelectGlobal()
+        {
+            List<Users> _users =
+                        (from user in Orm.bd.Users
+                        select user).ToList();
+            return _users;
         }
     }
 }

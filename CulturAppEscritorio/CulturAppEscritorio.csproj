@@ -107,44 +107,44 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Booking.cs">
+    <Compile Include="Models\Booking.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Events.cs">
+    <Compile Include="Models\Events.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Inventory.cs">
+    <Compile Include="Models\Inventory.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Inventory_room.cs">
+    <Compile Include="Models\Inventory_room.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModelCulturApp.Context.cs">
+    <Compile Include="Models\ModelCulturApp.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelCulturApp.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModelCulturApp.cs">
+    <Compile Include="Models\ModelCulturApp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ModelCulturApp.Designer.cs">
+    <Compile Include="Models\ModelCulturApp.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelCulturApp.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Orm.cs" />
-    <Compile Include="Modules\Rooms.cs">
+    <Compile Include="Models\Orm.cs" />
+    <Compile Include="Models\Rooms.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Type_event.cs">
+    <Compile Include="Models\Type_event.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Users.cs">
+    <Compile Include="Models\Users.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UsersOrm.cs" />
+    <Compile Include="Models\UsersOrm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\CustomComboBox.resx">
@@ -181,14 +181,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Modules\ModelCulturApp.edmx">
+    <EntityDeploy Include="Models\ModelCulturApp.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelCulturApp.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Modules\ModelCulturApp.edmx.diagram">
+    <None Include="Models\ModelCulturApp.edmx.diagram">
       <DependentUpon>ModelCulturApp.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CulturAppEscritorio.Models.Users.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -221,12 +222,12 @@
     <None Include="Resources\rooms.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Modules\ModelCulturApp.Context.tt">
+    <Content Include="Models\ModelCulturApp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelCulturApp.Context.cs</LastGenOutput>
       <DependentUpon>ModelCulturApp.edmx</DependentUpon>
     </Content>
-    <Content Include="Modules\ModelCulturApp.tt">
+    <Content Include="Models\ModelCulturApp.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelCulturApp.edmx</DependentUpon>
       <LastGenOutput>ModelCulturApp.cs</LastGenOutput>

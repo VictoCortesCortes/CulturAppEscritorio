@@ -259,6 +259,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormManageTickets";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManageTickets";
             ((System.ComponentModel.ISupportInitialize)(dataGridViewTickets)).EndInit();
             this.customPanel1.ResumeLayout(false);

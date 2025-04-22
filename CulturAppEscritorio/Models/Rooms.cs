@@ -7,33 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CulturAppEscritorio.Modules
+namespace CulturAppEscritorio.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Events
+    public partial class Rooms
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Events()
+        public Rooms()
         {
-            this.Booking = new HashSet<Booking>();
+            this.Events = new HashSet<Events>();
+            this.Inventory_room = new HashSet<Inventory_room>();
         }
     
         public int id { get; set; }
-        public string title { get; set; }
-        public System.DateTime start_datetime { get; set; }
-        public System.DateTime end_datetime { get; set; }
-        public int capacity { get; set; }
+        public string name { get; set; }
         public string description { get; set; }
-        public int price { get; set; }
-        public Nullable<bool> active { get; set; }
-        public Nullable<int> room_id { get; set; }
-        public Nullable<int> type_id { get; set; }
+        public double size { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Booking { get; set; }
-        public virtual Rooms Rooms { get; set; }
-        public virtual Type_event Type_event { get; set; }
+        public virtual ICollection<Events> Events { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Inventory_room> Inventory_room { get; set; }
     }
 }

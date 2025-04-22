@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CulturAppEscritorio.Modules;
-using GigFinder.Entities;
+using CulturAppEscritorio.Models;
 
 namespace CulturAppEscritorio
 {

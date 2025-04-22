@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CulturAppEscritorio.Modules
+namespace CulturAppEscritorio.Models
 {
     using System;
     using System.Data.Entity;

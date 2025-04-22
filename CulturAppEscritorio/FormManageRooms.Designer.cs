@@ -259,6 +259,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormManageRooms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManageRooms";
             ((System.ComponentModel.ISupportInitialize)(dataGridViewRooms)).EndInit();
             this.customPanel1.ResumeLayout(false);

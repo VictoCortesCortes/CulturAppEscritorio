@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CulturAppEscritorio.Modules;
+using CulturAppEscritorio.Models;
 
-namespace GigFinder.Models
+namespace CulturAppEscritorio.Models
 {
     public static class Orm
     {
