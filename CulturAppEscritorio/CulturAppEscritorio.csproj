@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,19 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controls\CustomComboBox.cs">
+    <Compile Include="Controls\CustomComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="controls\CustomPanel.cs">
+    <Compile Include="Controls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="controls\RoundedButton.cs">
+    <Compile Include="Controls\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="controls\RoundedTextBox.cs">
+    <Compile Include="Controls\RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="controls\RoundedTextBox.Designer.cs">
+    <Compile Include="Controls\RoundedTextBox.Designer.cs">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -97,12 +106,48 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Booking.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Events.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Inventory.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Inventory_room.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModelCulturApp.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCulturApp.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModelCulturApp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ModelCulturApp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCulturApp.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Rooms.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Type_event.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Users.cs">
+      <DependentUpon>ModelCulturApp.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="controls\CustomComboBox.resx">
+    <EmbeddedResource Include="Controls\CustomComboBox.resx">
       <DependentUpon>CustomComboBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="controls\RoundedTextBox.resx">
+    <EmbeddedResource Include="Controls\RoundedTextBox.resx">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -133,6 +178,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Modules\ModelCulturApp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCulturApp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modules\ModelCulturApp.edmx.diagram">
+      <DependentUpon>ModelCulturApp.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,6 +216,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rooms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modules\ModelCulturApp.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelCulturApp.Context.cs</LastGenOutput>
+      <DependentUpon>ModelCulturApp.edmx</DependentUpon>
+    </Content>
+    <Content Include="Modules\ModelCulturApp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCulturApp.edmx</DependentUpon>
+      <LastGenOutput>ModelCulturApp.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
