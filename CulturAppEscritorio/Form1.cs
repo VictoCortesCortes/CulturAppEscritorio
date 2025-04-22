@@ -40,7 +40,7 @@ namespace CulturAppEscritorio
                     this.Hide();
                     roundedTextBoxPass.Texts = "";
                     roundedTextBoxMail.Texts = "";
-                    FormMenu formMenu = new FormMenu();
+                    FormMenu formMenu = new FormMenu(_userLogin);
                     formMenu.FormClosed += (s, args) =>
                     {
                         this.Show();
