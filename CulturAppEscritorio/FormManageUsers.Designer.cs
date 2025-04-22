@@ -248,6 +248,7 @@
             this.roundedButtonDelete.TabIndex = 21;
             this.roundedButtonDelete.Text = "Eliminar";
             this.roundedButtonDelete.UseVisualStyleBackColor = false;
+            this.roundedButtonDelete.Click += new System.EventHandler(this.roundedButtonDelete_Click);
             // 
             // roundedButtonEdit
             // 
@@ -265,6 +266,7 @@
             this.roundedButtonEdit.TabIndex = 20;
             this.roundedButtonEdit.Text = "Editar";
             this.roundedButtonEdit.UseVisualStyleBackColor = false;
+            this.roundedButtonEdit.Click += new System.EventHandler(this.roundedButtonEdit_Click);
             // 
             // roundedButtonCreate
             // 
@@ -282,6 +284,7 @@
             this.roundedButtonCreate.TabIndex = 19;
             this.roundedButtonCreate.Text = "Crear";
             this.roundedButtonCreate.UseVisualStyleBackColor = false;
+            this.roundedButtonCreate.Click += new System.EventHandler(this.roundedButtonCreate_Click);
             // 
             // FormManageUsers
             // 

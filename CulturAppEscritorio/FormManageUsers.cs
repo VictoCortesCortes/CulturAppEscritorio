@@ -22,6 +22,20 @@ namespace CulturAppEscritorio
         {
             bindingSourceUsers.DataSource = UsersOrm.SelectGlobal();
         }
+        private void roundedButtonCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButtonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButtonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void customComboBoxFilter_OnSelectedIndexChanged_1(object sender, EventArgs e)
         {
