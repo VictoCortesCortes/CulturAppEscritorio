@@ -70,6 +70,7 @@
     <Compile Include="Controls\RoundedTextBox.Designer.cs">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Encrypt.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelCulturApp.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Orm.cs" />
     <Compile Include="Modules\Rooms.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
@@ -142,6 +144,7 @@
     <Compile Include="Modules\Users.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\UsersOrm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\CustomComboBox.resx">
