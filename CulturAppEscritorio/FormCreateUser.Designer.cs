@@ -60,6 +60,7 @@
             this.roundedButtonCancel.TabIndex = 50;
             this.roundedButtonCancel.Text = "Cancelar";
             this.roundedButtonCancel.UseVisualStyleBackColor = false;
+            this.roundedButtonCancel.Click += new System.EventHandler(this.roundedButtonCancel_Click);
             // 
             // roundedButtonSave
             // 
@@ -77,6 +78,7 @@
             this.roundedButtonSave.TabIndex = 49;
             this.roundedButtonSave.Text = "Crear";
             this.roundedButtonSave.UseVisualStyleBackColor = false;
+            this.roundedButtonSave.Click += new System.EventHandler(this.roundedButtonSave_Click);
             // 
             // customComboBoxType
             // 
@@ -89,8 +91,8 @@
             this.customComboBoxType.IconColor = System.Drawing.Color.Black;
             this.customComboBoxType.Items.AddRange(new object[] {
             "super",
-            "admin",
-            "user"});
+            "organizator",
+            "basic"});
             this.customComboBoxType.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.customComboBoxType.ListTextColor = System.Drawing.Color.Black;
             this.customComboBoxType.Location = new System.Drawing.Point(31, 454);

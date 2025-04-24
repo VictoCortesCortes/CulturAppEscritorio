@@ -16,5 +16,15 @@ namespace CulturAppEscritorio
         {
             InitializeComponent();
         }
+
+        private void roundedButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void roundedButtonSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
