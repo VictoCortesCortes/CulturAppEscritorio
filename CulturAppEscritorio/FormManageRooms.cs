@@ -16,5 +16,15 @@ namespace CulturAppEscritorio
         {
             InitializeComponent();
         }
+
+        private void roundedButtonCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButtonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
