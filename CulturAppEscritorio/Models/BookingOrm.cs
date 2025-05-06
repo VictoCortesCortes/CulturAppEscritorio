@@ -32,5 +32,15 @@ namespace CulturAppEscritorio.Models
                          }).ToList();
             return _bookings;
         }
+
+        public static void Delete(BookingComplete booking)
+        {
+            var _booking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);
+            if (_booking != null)
+            {
+                _booking.active = false;
+                Orm.bd.SaveChanges();
+            }
+        }
     }
 }

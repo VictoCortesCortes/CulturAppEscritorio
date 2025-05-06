@@ -61,4 +61,5 @@ namespace CulturAppEscritorio
                     return _rooms;
             }
         }
+    }
 }

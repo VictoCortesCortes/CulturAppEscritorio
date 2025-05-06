@@ -44,5 +44,15 @@ namespace CulturAppEscritorio.Models
                          }).ToList();
             return _events;
         }
+
+        public static void Delete(EventsComplete events)
+        {
+            var _event = Orm.bd.Events.FirstOrDefault(existingEvent => existingEvent.id == events.event_id);
+            if (events != null)
+            {
+                _event.active = false;
+                Orm.bd.SaveChanges();
+            }
+        }
     }
 }

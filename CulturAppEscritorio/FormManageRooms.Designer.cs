@@ -40,7 +40,6 @@
             this.bindingSourceRoom = new System.Windows.Forms.BindingSource(this.components);
             this.customPanel1 = new GigFinder.Controls.CustomPanel();
             this.customComboBoxOrder = new GigFinder.Controls.CustomComboBox();
-            this.roundedButtonDelete = new GigFinder.Controls.RoundedButton();
             this.roundedButtonEdit = new GigFinder.Controls.RoundedButton();
             this.roundedButtonCreate = new GigFinder.Controls.RoundedButton();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -176,23 +175,6 @@
             this.customComboBoxOrder.Texts = "Ordenar por";
             this.customComboBoxOrder.OnSelectedIndexChanged += new System.EventHandler(this.customComboBoxOrder_OnSelectedIndexChanged);
             // 
-            // roundedButtonDelete
-            // 
-            this.roundedButtonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.roundedButtonDelete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(208)))), ((int)(((byte)(213)))));
-            this.roundedButtonDelete.BorderRadius = 8;
-            this.roundedButtonDelete.BorderSize = 0;
-            this.roundedButtonDelete.FlatAppearance.BorderSize = 0;
-            this.roundedButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButtonDelete.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButtonDelete.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonDelete.Location = new System.Drawing.Point(1018, 132);
-            this.roundedButtonDelete.Name = "roundedButtonDelete";
-            this.roundedButtonDelete.Size = new System.Drawing.Size(150, 40);
-            this.roundedButtonDelete.TabIndex = 44;
-            this.roundedButtonDelete.Text = "Eliminar";
-            this.roundedButtonDelete.UseVisualStyleBackColor = false;
-            // 
             // roundedButtonEdit
             // 
             this.roundedButtonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
@@ -203,7 +185,7 @@
             this.roundedButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonEdit.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.roundedButtonEdit.Location = new System.Drawing.Point(862, 132);
+            this.roundedButtonEdit.Location = new System.Drawing.Point(1017, 132);
             this.roundedButtonEdit.Name = "roundedButtonEdit";
             this.roundedButtonEdit.Size = new System.Drawing.Size(150, 40);
             this.roundedButtonEdit.TabIndex = 43;
@@ -221,7 +203,7 @@
             this.roundedButtonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonCreate.Font = new System.Drawing.Font("Alkatra", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.roundedButtonCreate.Location = new System.Drawing.Point(706, 132);
+            this.roundedButtonCreate.Location = new System.Drawing.Point(861, 132);
             this.roundedButtonCreate.Name = "roundedButtonCreate";
             this.roundedButtonCreate.Size = new System.Drawing.Size(150, 40);
             this.roundedButtonCreate.TabIndex = 42;
@@ -258,7 +240,6 @@
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customComboBoxOrder);
-            this.Controls.Add(this.roundedButtonDelete);
             this.Controls.Add(this.roundedButtonEdit);
             this.Controls.Add(this.roundedButtonCreate);
             this.Controls.Add(this.labelTitle);
@@ -282,7 +263,6 @@
 
         private GigFinder.Controls.CustomPanel customPanel1;
         private GigFinder.Controls.CustomComboBox customComboBoxOrder;
-        private GigFinder.Controls.RoundedButton roundedButtonDelete;
         private GigFinder.Controls.RoundedButton roundedButtonEdit;
         private GigFinder.Controls.RoundedButton roundedButtonCreate;
         private System.Windows.Forms.Label labelTitle;

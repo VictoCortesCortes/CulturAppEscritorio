@@ -26,7 +26,22 @@ namespace CulturAppEscritorio
 
         private void roundedButtonDelete_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewEvents.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro de que quieres eliminar este evento?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if (result == DialogResult.Yes)
+                {
+                    EventsComplete selectedEvent = (EventsComplete)dataGridViewEvents.SelectedRows[0].DataBoundItem;
+                    EventsOrm.Delete(selectedEvent);
+                    bindingSourceEvents.DataSource = EventsOrm.SelectGlobal();
+                    customComboBoxOrder.Texts = "Ordenar por";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un usuario para eliminarlo.");
+            }
         }
 
         private void FormManageEvents_Load(object sender, EventArgs e)
