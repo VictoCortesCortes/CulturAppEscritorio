@@ -12,72 +12,139 @@ namespace CulturAppEscritorio.Models
     {
         public static Users SelectLogin(string email, string password)
         {
-            Users _user =
+            try
+            {
+                Users _user =
                 (Users)(from user in Orm.bd.Users
                         where user.email == email && user.password == password && user.active == true
                         select user).FirstOrDefault();
 
-            return _user;
+                return _user;
+            } 
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users Selectlogin: {ex.Message}");
+                return null;
+            }
+            
         }
         public static Users SelectWithMail(string email)
         {
-            Users _user =
+            try
+            {
+                Users _user =
                 (Users)(from user in Orm.bd.Users
                         where user.email == email && user.active == true
                         select user).FirstOrDefault();
 
-            return _user;
+                return _user;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users SelectWithMail: {ex.Message}");
+                return null;
+            }
         }
 
         public static List<Users> SelectGlobal()
         {
-            List<Users> _users =
+            try
+            {
+                List<Users> _users =
                         (from user in Orm.bd.Users
                          where user.active == true
                          select user).ToList();
-            return _users;
+                return _users;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users SelectGlobal: {ex.Message}");
+                return new List<Users>();
+            } 
         }
 
         public static void Insert(Users user)
         {
-            Orm.bd.Users.Add(user);
-            Orm.bd.SaveChanges();
+            try
+            {
+                Orm.bd.Users.Add(user);
+                Orm.bd.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users Insert: {ex.Message}");
+            }
+            
         }
 
         public static void Delete(Users user)
         {
-            Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
-            if (_existingUser != null)
+            try
             {
-                _existingUser.active = false;
-                Orm.bd.SaveChanges();
+                Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
+                if (_existingUser != null)
+                {
+                    _existingUser.active = false;
+                    Orm.bd.SaveChanges();
+                }
+                else
+                {
+                    Console.WriteLine($"Error in Users user with ID {user.id} not found.");
+                }
+            } 
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users Delete: {ex.Message}");
             }
         }
 
         public static void Update(Users user)
         {
-            Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
-            if (_existingUser != null)
+            try
             {
-                _existingUser.name = user.name;
-                _existingUser.surname = user.surname;
-                _existingUser.email = user.email;
-                _existingUser.password = user.password;
-                _existingUser.type = user.type;
-                Orm.bd.SaveChanges();
+                Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
+                if (_existingUser != null)
+                {
+                    _existingUser.name = user.name;
+                    _existingUser.surname = user.surname;
+                    _existingUser.email = user.email;
+                    _existingUser.password = user.password;
+                    _existingUser.type = user.type;
+                    Orm.bd.SaveChanges();
+                }
+                else
+                {
+                    Console.WriteLine($"Error in Users user with ID {user.id} not found.");
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users Update: {ex.Message}");
+            } 
         }
+        
 
         public static void UpdateWithoutPass(Users user)
         {
-            Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
-            if (_existingUser != null)
+            try
             {
-                _existingUser.name = user.name;
-                _existingUser.surname = user.surname;
-                _existingUser.email = user.email;
-                _existingUser.type = user.type;
-                Orm.bd.SaveChanges();
+                Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
+                if (_existingUser != null)
+                {
+                    _existingUser.name = user.name;
+                    _existingUser.surname = user.surname;
+                    _existingUser.email = user.email;
+                    _existingUser.type = user.type;
+                    Orm.bd.SaveChanges();
+                }
+                else
+                {
+                    Console.WriteLine($"Error in Users user with ID {user.id} not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Users UpdateWithoutPass: {ex.Message}");
             }
         }
     }
