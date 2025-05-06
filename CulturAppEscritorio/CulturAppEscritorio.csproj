@@ -201,7 +201,9 @@
       <DependentUpon>ModelCulturApp.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CulturAppEscritorio.Models.BookingComplete.datasource" />
     <None Include="Properties\DataSources\CulturAppEscritorio.Models.EventsComplete.datasource" />
+    <None Include="Properties\DataSources\CulturAppEscritorio.Models.Rooms.datasource" />
     <None Include="Properties\DataSources\CulturAppEscritorio.Models.Users.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
