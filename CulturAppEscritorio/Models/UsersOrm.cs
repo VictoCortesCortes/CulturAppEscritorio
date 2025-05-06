@@ -10,11 +10,20 @@ namespace CulturAppEscritorio.Models
 {
     public static class UsersOrm
     {
-        public static Users Selectlogin(string email, string password)
+        public static Users SelectLogin(string email, string password)
         {
             Users _user =
                 (Users)(from user in Orm.bd.Users
                         where user.email == email && user.password == password && user.active == true
+                        select user).FirstOrDefault();
+
+            return _user;
+        }
+        public static Users SelectWithMail(string email)
+        {
+            Users _user =
+                (Users)(from user in Orm.bd.Users
+                        where user.email == email && user.active == true
                         select user).FirstOrDefault();
 
             return _user;
@@ -24,8 +33,52 @@ namespace CulturAppEscritorio.Models
         {
             List<Users> _users =
                         (from user in Orm.bd.Users
-                        select user).ToList();
+                         where user.active == true
+                         select user).ToList();
             return _users;
+        }
+
+        public static void Insert(Users user)
+        {
+            Orm.bd.Users.Add(user);
+            Orm.bd.SaveChanges();
+        }
+
+        public static void Delete(Users user)
+        {
+            Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
+            if (_existingUser != null)
+            {
+                _existingUser.active = false;
+                Orm.bd.SaveChanges();
+            }
+        }
+
+        public static void Update(Users user)
+        {
+            Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
+            if (_existingUser != null)
+            {
+                _existingUser.name = user.name;
+                _existingUser.surname = user.surname;
+                _existingUser.email = user.email;
+                _existingUser.password = user.password;
+                _existingUser.type = user.type;
+                Orm.bd.SaveChanges();
+            }
+        }
+
+        public static void UpdateWithoutPass(Users user)
+        {
+            Users _existingUser = Orm.bd.Users.FirstOrDefault(existingUser => existingUser.id == user.id);
+            if (_existingUser != null)
+            {
+                _existingUser.name = user.name;
+                _existingUser.surname = user.surname;
+                _existingUser.email = user.email;
+                _existingUser.type = user.type;
+                Orm.bd.SaveChanges();
+            }
         }
     }
 }

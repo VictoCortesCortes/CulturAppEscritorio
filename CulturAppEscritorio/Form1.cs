@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CulturAppEscritorio.Models;
+using GigFinder.Entities;
 
 namespace CulturAppEscritorio
 {
@@ -21,11 +22,11 @@ namespace CulturAppEscritorio
         private void roundedButtonLogin_Click(object sender, EventArgs e)
         {
             string mail = roundedTextBoxMail.Texts.Trim();
-            string pass = roundedTextBoxPass.Texts.Trim();
+            string pass = Encrypt.EncryptSHA256(roundedTextBoxPass.Texts.Trim());
 
             // Encrypt.EncryptSHA256(roundedTextBoxPass.Texts.Trim());
 
-            Users _userLogin = UsersOrm.Selectlogin(mail, pass);
+            Users _userLogin = UsersOrm.SelectLogin(mail, pass);
             if (_userLogin != null)
             {
                 if (_userLogin.type == "basic")

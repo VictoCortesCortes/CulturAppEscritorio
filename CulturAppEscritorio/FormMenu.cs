@@ -43,7 +43,7 @@ namespace CulturAppEscritorio
             }
             else
             {
-                FormManageUsers formUsers = new FormManageUsers();
+                FormManageUsers formUsers = new FormManageUsers(_userLogin);
                 this.Hide();
                 formUsers.ShowDialog();
                 this.Show();
@@ -58,7 +58,7 @@ namespace CulturAppEscritorio
             }
             else
             {
-                FormManageUsers formUsers = new FormManageUsers();
+                FormManageUsers formUsers = new FormManageUsers(_userLogin);
                 this.Hide();
                 formUsers.ShowDialog();
                 this.Show();

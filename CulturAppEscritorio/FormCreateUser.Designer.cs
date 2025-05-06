@@ -76,7 +76,7 @@
             this.roundedButtonSave.Name = "roundedButtonSave";
             this.roundedButtonSave.Size = new System.Drawing.Size(150, 40);
             this.roundedButtonSave.TabIndex = 49;
-            this.roundedButtonSave.Text = "Crear";
+            this.roundedButtonSave.Text = "Guardar";
             this.roundedButtonSave.UseVisualStyleBackColor = false;
             this.roundedButtonSave.Click += new System.EventHandler(this.roundedButtonSave_Click);
             // 
@@ -304,6 +304,7 @@
             this.Name = "FormCreateUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCreateUser";
+            this.Load += new System.EventHandler(this.FormCreateUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
