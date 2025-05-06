@@ -106,10 +106,10 @@ namespace CulturAppEscritorio
                 case "Id":
                     return _users.OrderBy(user => user.id).ToList();
 
-                case "Name":
+                case "Nombre":
                     return _users.OrderBy(user => user.name).ToList();
 
-                case "Surname":
+                case "Apellido":
                     return _users.OrderBy(user => user.surname).ToList();
 
                 case "Email":

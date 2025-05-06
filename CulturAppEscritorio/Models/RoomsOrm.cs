@@ -8,5 +8,12 @@ namespace CulturAppEscritorio.Models
 {
     public static class RoomsOrm
     {
+        public static List<Rooms> SelectGlobal()
+        {
+            List<Rooms> _rooms =
+                        (from room in Orm.bd.Rooms
+                         select room).ToList();
+            return _rooms;
+        }
     }
 }

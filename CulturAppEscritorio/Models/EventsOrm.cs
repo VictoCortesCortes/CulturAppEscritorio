@@ -22,5 +22,27 @@ namespace CulturAppEscritorio.Models
     }
     public static class EventsOrm
     {
+        public static List<EventsComplete> SelectGlobal()
+        {
+            List<EventsComplete> _events =
+                        (from events in Orm.bd.Events
+                         join type in Orm.bd.Type_event on events.type_id equals type.id
+                         join room in Orm.bd.Rooms on events.room_id equals room.id
+                         select new EventsComplete
+                         {
+                             event_id = events.id,
+                             title = events.title,
+                             description = events.description,
+                             start_date = events.start_datetime,
+                             end_date = events.end_datetime,
+                             capacity = events.capacity,
+                             price = events.price,
+                             type_id = type.id,
+                             type = type.name,
+                             room_id = room.id,
+                             room = room.name
+                         }).ToList();
+            return _events;
+        }
     }
 }
