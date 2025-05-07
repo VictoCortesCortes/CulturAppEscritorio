@@ -28,7 +28,7 @@ namespace CulturAppEscritorio
             }
             else
             {
-                FormManageTickets formTickets = new FormManageTickets();
+                FormManageBookings formTickets = new FormManageBookings();
                 this.Hide();
                 formTickets.ShowDialog();
                 this.Show();
@@ -120,7 +120,7 @@ namespace CulturAppEscritorio
             }
             else
             {
-                FormManageTickets formTickets = new FormManageTickets();
+                FormManageBookings formTickets = new FormManageBookings();
                 this.Hide();
                 formTickets.ShowDialog();
                 this.Show();

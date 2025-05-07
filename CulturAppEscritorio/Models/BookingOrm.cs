@@ -42,5 +42,10 @@ namespace CulturAppEscritorio.Models
                 Orm.bd.SaveChanges();
             }
         }
+        public static void Insert(Booking booking)
+        {
+            Orm.bd.Booking.Add(booking);
+            Orm.bd.SaveChanges();
+        }
     }
 }

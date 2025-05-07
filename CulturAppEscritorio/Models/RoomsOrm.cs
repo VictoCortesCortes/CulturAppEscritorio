@@ -15,5 +15,11 @@ namespace CulturAppEscritorio.Models
                          select room).ToList();
             return _rooms;
         }
+
+        public static void Insert(Rooms room)
+        {
+            Orm.bd.Rooms.Add(room);
+            Orm.bd.SaveChanges();
+        }
     }
 }

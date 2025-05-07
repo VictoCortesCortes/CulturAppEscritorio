@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CulturAppEscritorio.Models;
 
@@ -13,6 +9,7 @@ namespace CulturAppEscritorio
 {
     public partial class FormManageRooms : Form
     {
+        Rooms _roomEdit = null;
         public FormManageRooms()
         {
             InitializeComponent();
@@ -20,12 +17,30 @@ namespace CulturAppEscritorio
 
         private void roundedButtonCreate_Click(object sender, EventArgs e)
         {
-
+            FormCreateRoom formCreateRoom = new FormCreateRoom(0, _roomEdit);
+            if (formCreateRoom.ShowDialog() == DialogResult.OK)
+            {
+                bindingSourceRoom.DataSource = RoomsOrm.SelectGlobal();
+                customComboBoxOrder.Texts = "Ordenar por";
+            }
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewRooms.SelectedRows.Count > 0)
+            {
+                _roomEdit = (Rooms)dataGridViewRooms.SelectedRows[0].DataBoundItem;
+                FormCreateRoom formCreateRoom = new FormCreateRoom(1, _roomEdit);
+                if (formCreateRoom.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceRoom.DataSource = UsersOrm.SelectGlobal();
+                    customComboBoxOrder.Texts = "Ordenar por";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una sala para editarla.");
+            }
         }
 
         private void FormManageRooms_Load(object sender, EventArgs e)

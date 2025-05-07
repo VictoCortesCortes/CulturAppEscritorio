@@ -7,9 +7,9 @@ using CulturAppEscritorio.Models;
 
 namespace CulturAppEscritorio
 {
-    public partial class FormManageTickets : Form
+    public partial class FormManageBookings : Form
     {
-        public FormManageTickets()
+        public FormManageBookings()
         {
             InitializeComponent();
         }

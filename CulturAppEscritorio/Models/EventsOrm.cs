@@ -54,5 +54,11 @@ namespace CulturAppEscritorio.Models
                 Orm.bd.SaveChanges();
             }
         }
+
+        public static void Insert(Events events)
+        {
+            Orm.bd.Events.Add(events);
+            Orm.bd.SaveChanges();
+        }
     }
 }

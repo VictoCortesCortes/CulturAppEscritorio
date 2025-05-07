@@ -15,6 +15,18 @@ namespace CulturAppEscritorio
             actionMade = action;
             _userEdit = user;
         }
+        private void FormCreateUser_Load(object sender, EventArgs e)
+        {
+            if (actionMade == 1)
+            {
+                labelTitle.Text = "Editar Usuario";
+                roundedTextBoxName.Texts = _userEdit.name;
+                roundedTextBoxSurname.Texts = _userEdit.surname;
+                roundedTextBoxMail.Texts = _userEdit.email;
+                customComboBoxType.SelectedItem = _userEdit.type;
+                customComboBoxType.Texts = _userEdit.type.ToString();
+            }
+        }
 
         private void roundedButtonCancel_Click(object sender, EventArgs e)
         {
@@ -121,19 +133,6 @@ namespace CulturAppEscritorio
                     }
                 }
             }           
-        }
-
-        private void FormCreateUser_Load(object sender, EventArgs e)
-        {
-            if (actionMade == 1)
-            {
-                labelTitle.Text = "Editar Usuario";
-                roundedTextBoxName.Texts = _userEdit.name;
-                roundedTextBoxSurname.Texts = _userEdit.surname;
-                roundedTextBoxMail.Texts = _userEdit.email;
-                customComboBoxType.SelectedItem = _userEdit.type;
-                customComboBoxType.Texts = _userEdit.type.ToString();
-            }
         }
     }
 }

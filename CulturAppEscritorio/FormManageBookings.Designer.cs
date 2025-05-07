@@ -1,6 +1,6 @@
 ﻿namespace CulturAppEscritorio
 {
-    partial class FormManageTickets
+    partial class FormManageBookings
     {
         /// <summary>
         /// Required designer variable.
