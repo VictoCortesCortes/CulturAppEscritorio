@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CulturAppEscritorio.Models;
 
@@ -30,7 +26,22 @@ namespace CulturAppEscritorio
 
         private void roundedButtonDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridViewBookings.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Estás seguro de que quieres eliminar esta reserva?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+                if (result == DialogResult.Yes)
+                {
+                    BookingComplete selectedBooking = (BookingComplete)dataGridViewBookings.SelectedRows[0].DataBoundItem;
+                    BookingOrm.Delete(selectedBooking);
+                    bindingSourceBooking.DataSource = BookingOrm.SelectGlobal();
+                    customComboBoxOrder.Texts = "Ordenar por";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una reserva para eliminarla.");
+            }
         }
 
         private void FormManageTickets_Load(object sender, EventArgs e)

@@ -29,39 +29,54 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridView dataGridViewTickets;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.bindingSourceBooking = new System.Windows.Forms.BindingSource(this.components);
             this.customPanel1 = new GigFinder.Controls.CustomPanel();
+            this.dataGridViewBookings = new System.Windows.Forms.DataGridView();
             this.roundedButtonDelete = new GigFinder.Controls.RoundedButton();
             this.roundedButtonEdit = new GigFinder.Controls.RoundedButton();
             this.roundedButtonCreate = new GigFinder.Controls.RoundedButton();
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.bindingSourceBooking = new System.Windows.Forms.BindingSource(this.components);
             this.customComboBoxOrder = new GigFinder.Controls.CustomComboBox();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventtitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTickets = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(dataGridViewTickets)).BeginInit();
-            this.customPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBooking)).BeginInit();
+            this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewTickets
+            // bindingSourceBooking
             // 
-            dataGridViewTickets.AllowUserToAddRows = false;
-            dataGridViewTickets.AllowUserToDeleteRows = false;
-            dataGridViewTickets.AllowUserToResizeRows = false;
-            dataGridViewTickets.AutoGenerateColumns = false;
-            dataGridViewTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewTickets.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewTickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewTickets.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewTickets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bindingSourceBooking.DataSource = typeof(CulturAppEscritorio.Models.BookingComplete);
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.customPanel1.BorderRadius = 8;
+            this.customPanel1.Controls.Add(this.dataGridViewBookings);
+            this.customPanel1.Location = new System.Drawing.Point(19, 191);
+            this.customPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
+            this.customPanel1.Size = new System.Drawing.Size(1148, 454);
+            this.customPanel1.TabIndex = 32;
+            // 
+            // dataGridViewBookings
+            // 
+            this.dataGridViewBookings.AllowUserToAddRows = false;
+            this.dataGridViewBookings.AllowUserToDeleteRows = false;
+            this.dataGridViewBookings.AllowUserToResizeRows = false;
+            this.dataGridViewBookings.AutoGenerateColumns = false;
+            this.dataGridViewBookings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewBookings.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewBookings.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewBookings.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewBookings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Alkatra", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,29 +84,29 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGridViewTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewTickets.ColumnHeadersHeight = 35;
-            dataGridViewTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewBookings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewBookings.ColumnHeadersHeight = 35;
+            this.dataGridViewBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewBookings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usernameDataGridViewTextBoxColumn,
             this.eventtitleDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn});
-            dataGridViewTickets.DataSource = this.bindingSourceBooking;
+            this.dataGridViewBookings.DataSource = this.bindingSourceBooking;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dataGridViewTickets.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewTickets.Dock = System.Windows.Forms.DockStyle.Fill;
-            dataGridViewTickets.EnableHeadersVisualStyles = false;
-            dataGridViewTickets.GridColor = System.Drawing.Color.White;
-            dataGridViewTickets.Location = new System.Drawing.Point(6, 0);
-            dataGridViewTickets.MultiSelect = false;
-            dataGridViewTickets.Name = "dataGridViewTickets";
-            dataGridViewTickets.ReadOnly = true;
+            this.dataGridViewBookings.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewBookings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewBookings.EnableHeadersVisualStyles = false;
+            this.dataGridViewBookings.GridColor = System.Drawing.Color.White;
+            this.dataGridViewBookings.Location = new System.Drawing.Point(6, 0);
+            this.dataGridViewBookings.MultiSelect = false;
+            this.dataGridViewBookings.Name = "dataGridViewBookings";
+            this.dataGridViewBookings.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,24 +114,12 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGridViewTickets.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewTickets.RowHeadersVisible = false;
-            dataGridViewTickets.RowTemplate.Height = 25;
-            dataGridViewTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewTickets.Size = new System.Drawing.Size(1136, 446);
-            dataGridViewTickets.TabIndex = 0;
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            this.customPanel1.BorderRadius = 8;
-            this.customPanel1.Controls.Add(dataGridViewTickets);
-            this.customPanel1.Location = new System.Drawing.Point(19, 191);
-            this.customPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
-            this.customPanel1.Size = new System.Drawing.Size(1148, 454);
-            this.customPanel1.TabIndex = 32;
+            this.dataGridViewBookings.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewBookings.RowHeadersVisible = false;
+            this.dataGridViewBookings.RowTemplate.Height = 25;
+            this.dataGridViewBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewBookings.Size = new System.Drawing.Size(1136, 446);
+            this.dataGridViewBookings.TabIndex = 2;
             // 
             // roundedButtonDelete
             // 
@@ -193,10 +196,6 @@
             this.pictureBoxLogo.TabIndex = 25;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // bindingSourceBooking
-            // 
-            this.bindingSourceBooking.DataSource = typeof(CulturAppEscritorio.Models.BookingComplete);
-            // 
             // customComboBoxOrder
             // 
             this.customComboBoxOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(242)))), ((int)(((byte)(233)))));
@@ -261,10 +260,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManageTickets";
             this.Load += new System.EventHandler(this.FormManageTickets_Load);
-            ((System.ComponentModel.ISupportInitialize)(dataGridViewTickets)).EndInit();
-            this.customPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBooking)).EndInit();
+            this.customPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +279,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.BindingSource bindingSourceBooking;
         private GigFinder.Controls.CustomComboBox customComboBoxOrder;
+        private System.Windows.Forms.DataGridView dataGridViewBookings;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eventtitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
