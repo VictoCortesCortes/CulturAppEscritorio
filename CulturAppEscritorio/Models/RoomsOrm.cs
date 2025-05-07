@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CulturAppEscritorio.Models
 {
@@ -20,6 +17,18 @@ namespace CulturAppEscritorio.Models
         {
             Orm.bd.Rooms.Add(room);
             Orm.bd.SaveChanges();
+        }
+
+        public static void Update(Rooms room)
+        {
+            Rooms _room = Orm.bd.Rooms.Find(room.id);
+            if (_room != null)
+            {
+                _room.name = room.name;
+                _room.description = room.description;
+                _room.size = room.size;
+                Orm.bd.SaveChanges();
+            }
         }
     }
 }

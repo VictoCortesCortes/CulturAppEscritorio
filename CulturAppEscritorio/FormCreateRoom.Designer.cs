@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.roundedButtonCancel = new GigFinder.Controls.RoundedButton();
-            this.roundedButtonSave = new GigFinder.Controls.RoundedButton();
             this.labelSize = new System.Windows.Forms.Label();
-            this.roundedTextBoxSize = new GigFinder.Controls.RoundedTextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
+            this.roundedButtonCancel = new GigFinder.Controls.RoundedButton();
+            this.roundedButtonSave = new GigFinder.Controls.RoundedButton();
+            this.roundedTextBoxSize = new GigFinder.Controls.RoundedTextBox();
             this.roundedTextBoxDescription = new GigFinder.Controls.RoundedTextBox();
             this.roundedTextBoxName = new GigFinder.Controls.RoundedTextBox();
             this.SuspendLayout();
@@ -49,6 +49,39 @@
             this.labelTitle.Size = new System.Drawing.Size(252, 83);
             this.labelTitle.TabIndex = 52;
             this.labelTitle.Text = "Crear sala";
+            // 
+            // labelSize
+            // 
+            this.labelSize.AutoSize = true;
+            this.labelSize.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.labelSize.Location = new System.Drawing.Point(35, 147);
+            this.labelSize.Name = "labelSize";
+            this.labelSize.Size = new System.Drawing.Size(72, 22);
+            this.labelSize.TabIndex = 64;
+            this.labelSize.Text = "Tamaño:";
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.labelDescription.Location = new System.Drawing.Point(35, 219);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(98, 22);
+            this.labelDescription.TabIndex = 63;
+            this.labelDescription.Text = "Descripción:";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.labelName.Location = new System.Drawing.Point(35, 76);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(73, 22);
+            this.labelName.TabIndex = 62;
+            this.labelName.Text = "Nombre:";
             // 
             // roundedButtonCancel
             // 
@@ -86,17 +119,6 @@
             this.roundedButtonSave.UseVisualStyleBackColor = false;
             this.roundedButtonSave.Click += new System.EventHandler(this.roundedButtonSave_Click);
             // 
-            // labelSize
-            // 
-            this.labelSize.AutoSize = true;
-            this.labelSize.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.labelSize.Location = new System.Drawing.Point(35, 147);
-            this.labelSize.Name = "labelSize";
-            this.labelSize.Size = new System.Drawing.Size(72, 22);
-            this.labelSize.TabIndex = 64;
-            this.labelSize.Text = "Apellido:";
-            // 
             // roundedTextBoxSize
             // 
             this.roundedTextBoxSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
@@ -118,28 +140,6 @@
             this.roundedTextBoxSize.TabIndex = 58;
             this.roundedTextBoxSize.Texts = "";
             this.roundedTextBoxSize.UnderlinedStyle = false;
-            // 
-            // labelDescription
-            // 
-            this.labelDescription.AutoSize = true;
-            this.labelDescription.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.labelDescription.Location = new System.Drawing.Point(35, 219);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(65, 22);
-            this.labelDescription.TabIndex = 63;
-            this.labelDescription.Text = "Correo:";
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.labelName.Location = new System.Drawing.Point(35, 76);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(73, 22);
-            this.labelName.TabIndex = 62;
-            this.labelName.Text = "Nombre:";
             // 
             // roundedTextBoxDescription
             // 

@@ -33,7 +33,7 @@ namespace CulturAppEscritorio
                 FormCreateRoom formCreateRoom = new FormCreateRoom(1, _roomEdit);
                 if (formCreateRoom.ShowDialog() == DialogResult.OK)
                 {
-                    bindingSourceRoom.DataSource = UsersOrm.SelectGlobal();
+                    bindingSourceRoom.DataSource = RoomsOrm.SelectGlobal();
                     customComboBoxOrder.Texts = "Ordenar por";
                 }
             }

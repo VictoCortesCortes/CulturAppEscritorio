@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using CulturAppEscritorio.Models;
+using GigFinder.Entities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CulturAppEscritorio
 {
@@ -34,7 +36,41 @@ namespace CulturAppEscritorio
 
         private void roundedButtonSave_Click(object sender, EventArgs e)
         {
+            string name = roundedTextBoxName.Texts.Trim();
+            string description = roundedTextBoxDescription.Texts.Trim();
+            bool isSizeValid = float.TryParse(roundedTextBoxSize.Texts.Trim(), out float size);
 
+            if (string.IsNullOrEmpty(name) ||
+                    string.IsNullOrEmpty(description) ||
+                    isSizeValid == false ||
+                    size <= 0)
+            {
+                MessageBox.Show("Por favor, completa todos los campos para crear la sala.");
+            }
+            else
+            {
+                if (actionMade == 0)
+                {
+                    Rooms _room = new Rooms
+                    {
+                        name = name,
+                        description = description,
+                        size = size
+                    };
+                    RoomsOrm.Insert(_room);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    _roomEdit.name = name;
+                    _roomEdit.description = description;
+                    _roomEdit.size = size;
+                    RoomsOrm.Update(_roomEdit);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
         }
     }
 }
