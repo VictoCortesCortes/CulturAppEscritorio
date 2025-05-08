@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.customComboBoxEvent = new GigFinder.Controls.CustomComboBox();
+            this.bindingSourceEvent = new System.Windows.Forms.BindingSource(this.components);
             this.labelTitle = new System.Windows.Forms.Label();
             this.roundedButtonCancel = new GigFinder.Controls.RoundedButton();
             this.roundedButtonSave = new GigFinder.Controls.RoundedButton();
             this.customComboBoxUser = new GigFinder.Controls.CustomComboBox();
+            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
             this.labelQuantity = new System.Windows.Forms.Label();
             this.roundedTextBoxQuantity = new GigFinder.Controls.RoundedTextBox();
-            this.bindingSourceEvent = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceUsers = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUsers)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,10 @@
             this.customComboBoxEvent.Size = new System.Drawing.Size(320, 38);
             this.customComboBoxEvent.TabIndex = 69;
             this.customComboBoxEvent.Texts = "Evento";
+            // 
+            // bindingSourceEvent
+            // 
+            this.bindingSourceEvent.DataSource = typeof(CulturAppEscritorio.Models.EventsComplete);
             // 
             // labelTitle
             // 
@@ -90,6 +94,7 @@
             this.roundedButtonCancel.TabIndex = 66;
             this.roundedButtonCancel.Text = "Cancelar";
             this.roundedButtonCancel.UseVisualStyleBackColor = false;
+            this.roundedButtonCancel.Click += new System.EventHandler(this.roundedButtonCancel_Click);
             // 
             // roundedButtonSave
             // 
@@ -107,6 +112,7 @@
             this.roundedButtonSave.TabIndex = 65;
             this.roundedButtonSave.Text = "Guardar";
             this.roundedButtonSave.UseVisualStyleBackColor = false;
+            this.roundedButtonSave.Click += new System.EventHandler(this.roundedButtonSave_Click);
             // 
             // customComboBoxUser
             // 
@@ -128,6 +134,10 @@
             this.customComboBoxUser.Size = new System.Drawing.Size(320, 38);
             this.customComboBoxUser.TabIndex = 64;
             this.customComboBoxUser.Texts = "Usuario";
+            // 
+            // bindingSourceUsers
+            // 
+            this.bindingSourceUsers.DataSource = typeof(CulturAppEscritorio.Models.Users);
             // 
             // labelQuantity
             // 
@@ -154,21 +164,13 @@
             this.roundedTextBoxQuantity.Multiline = false;
             this.roundedTextBoxQuantity.Name = "roundedTextBoxQuantity";
             this.roundedTextBoxQuantity.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
-            this.roundedTextBoxQuantity.PasswordChar = true;
+            this.roundedTextBoxQuantity.PasswordChar = false;
             this.roundedTextBoxQuantity.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
             this.roundedTextBoxQuantity.PlaceholderText = "";
             this.roundedTextBoxQuantity.Size = new System.Drawing.Size(323, 43);
             this.roundedTextBoxQuantity.TabIndex = 63;
             this.roundedTextBoxQuantity.Texts = "";
             this.roundedTextBoxQuantity.UnderlinedStyle = false;
-            // 
-            // bindingSourceEvent
-            // 
-            this.bindingSourceEvent.DataSource = typeof(CulturAppEscritorio.Models.EventsComplete);
-            // 
-            // bindingSourceUsers
-            // 
-            this.bindingSourceUsers.DataSource = typeof(CulturAppEscritorio.Models.Users);
             // 
             // FormCreateBooking
             // 

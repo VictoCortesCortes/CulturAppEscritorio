@@ -34,7 +34,7 @@ namespace CulturAppEscritorio
 
         private void roundedButtonSave_Click(object sender, EventArgs e)
         {
-            int totalBooking = 0;
+            
             bool isQuantityValid = int.TryParse(roundedTextBoxQuantity.Texts.Trim(), out int quantity);
             Users users = (Users)customComboBoxUser.SelectedItem;
             EventsComplete events = (EventsComplete)customComboBoxEvent.SelectedItem;
@@ -47,6 +47,7 @@ namespace CulturAppEscritorio
                 }
                 else
                 {
+                    int totalBooking = 0;
                     List<BookingComplete> bookingEvent = BookingOrm.SelectByEvent(events.event_id);
                     foreach (BookingComplete booking in bookingEvent)
                     {
@@ -58,32 +59,56 @@ namespace CulturAppEscritorio
                     }
                     else
                     {
-                        Booking booking = new Booking
+                        BookingComplete bookingExists = BookingOrm.SelectByUserEvent(users.id, events.event_id);
+                        if (bookingExists != null)
                         {
-                            user_id = users.id,
-                            event_id = events.event_id,
-                            quantity = quantity,
-                            active = true
-                        };
-                        BookingOrm.Insert(booking);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                            MessageBox.Show("Ya existe una reserva para este evento de este usuario.");
+                        }
+                        else
+                        {
+                            Booking booking = new Booking
+                            {
+                                user_id = users.id,
+                                event_id = events.event_id,
+                                quantity = quantity,
+                                active = true
+                            };
+                            BookingOrm.Insert(booking);
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                 }
             }
             else
             {
-                if (isQuantityValid == false || quantity <= 0)
+                int totalBooking2 = 0;
+                List<BookingComplete> bookingEvent = BookingOrm.SelectByEvent(events.event_id);
+                foreach (BookingComplete booking in bookingEvent)
                 {
-                    MessageBox.Show("Por favor, completa todos los campos correctamente.");
+                    totalBooking2 += booking.quantity;
+                }
+                totalBooking2 -= _bookingEdit.quantity;
+
+                if (totalBooking2 + quantity > EventsOrm.SelectById(_bookingEdit.event_id).capacity)
+                {
+                    MessageBox.Show("El evento seleccionado no tiene suficientes entradas disponibles.");
                 }
                 else
                 {
-                    _bookingEdit.quantity = quantity;
-                    BookingOrm.Update(_bookingEdit);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    if (isQuantityValid == false || quantity <= 0)
+                    {
+                        MessageBox.Show("Por favor, completa todos los campos correctamente.");
+                    }
+                    else
+                    {
+                        _bookingEdit.quantity = quantity;
+                        BookingOrm.Update(_bookingEdit);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
+                
             }
         }
 

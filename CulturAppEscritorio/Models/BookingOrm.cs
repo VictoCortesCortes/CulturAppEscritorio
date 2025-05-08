@@ -52,6 +52,24 @@ namespace CulturAppEscritorio.Models
             return _bookings;
         }
 
+        public static BookingComplete SelectByUserEvent(int user_id, int event_id)
+        {
+            BookingComplete _booking =
+                        (from booking in Orm.bd.Booking
+                         join user in Orm.bd.Users on booking.user_id equals user.id
+                         join events in Orm.bd.Events on booking.event_id equals events.id
+                         where booking.user_id == user_id && booking.event_id == event_id && booking.active == true
+                         select new BookingComplete
+                         {
+                             user_id = user.id,
+                             user_name = user.name,
+                             event_id = events.id,
+                             event_title = events.title,
+                             quantity = booking.quantity
+                         }).FirstOrDefault();
+            return _booking;
+        }
+
         public static void Update(BookingComplete booking)
         {
             var _existingBooking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);

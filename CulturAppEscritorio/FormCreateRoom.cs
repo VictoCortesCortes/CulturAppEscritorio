@@ -48,9 +48,14 @@ namespace CulturAppEscritorio
             else
             {
                 Rooms _roomExists = RoomsOrm.SelectByName(name);
-                if (_roomExists == null || _roomExists.id == _roomEdit.id)
+                
+                if (actionMade == 0)
                 {
-                    if (actionMade == 0)
+                    if (_roomExists != null)
+                    {
+                        MessageBox.Show("Ya existe una sala con ese nombre.");
+                    }
+                    else
                     {
                         Rooms _room = new Rooms
                         {
@@ -62,7 +67,10 @@ namespace CulturAppEscritorio
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
-                    else
+                }
+                else
+                {
+                    if (_roomExists == null || _roomExists.id == _roomEdit.id)
                     {
                         _roomEdit.name = name;
                         _roomEdit.description = description;
@@ -71,10 +79,10 @@ namespace CulturAppEscritorio
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Ya existe una sala con ese nombre.");
+                    else
+                    {
+                        MessageBox.Show("Ya existe una sala con ese nombre.");
+                    }
                 }
             }
         }
