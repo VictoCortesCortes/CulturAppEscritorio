@@ -9,6 +9,7 @@ namespace CulturAppEscritorio
 {
     public partial class FormManageBookings : Form
     {
+        BookingComplete _bookingEdit = null;
         public FormManageBookings()
         {
             InitializeComponent();
@@ -16,12 +17,30 @@ namespace CulturAppEscritorio
 
         private void roundedButtonCreate_Click(object sender, EventArgs e)
         {
-
+            FormCreateBooking formCreateBooking = new FormCreateBooking(0, _bookingEdit);
+            if (formCreateBooking.ShowDialog() == DialogResult.OK)
+            {
+                bindingSourceBooking.DataSource = BookingOrm.SelectGlobal();
+                customComboBoxOrder.Texts = "Ordenar por";
+            }
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewBookings.SelectedRows.Count > 0)
+            {
+                _bookingEdit = (BookingComplete)dataGridViewBookings.SelectedRows[0].DataBoundItem;
+                FormCreateBooking formCreateBooking = new FormCreateBooking(1, _bookingEdit);
+                if (formCreateBooking.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceBooking.DataSource = BookingOrm.SelectGlobal();
+                    customComboBoxOrder.Texts = "Ordenar por";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una reserva para editarla.");
+            }
         }
 
         private void roundedButtonDelete_Click(object sender, EventArgs e)

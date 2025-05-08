@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using CulturAppEscritorio.Models;
-using GigFinder.Entities;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CulturAppEscritorio
 {
@@ -49,26 +47,34 @@ namespace CulturAppEscritorio
             }
             else
             {
-                if (actionMade == 0)
+                Rooms _roomExists = RoomsOrm.SelectByName(name);
+                if (_roomExists == null || _roomExists.id == _roomEdit.id)
                 {
-                    Rooms _room = new Rooms
+                    if (actionMade == 0)
                     {
-                        name = name,
-                        description = description,
-                        size = size
-                    };
-                    RoomsOrm.Insert(_room);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                        Rooms _room = new Rooms
+                        {
+                            name = name,
+                            description = description,
+                            size = size
+                        };
+                        RoomsOrm.Insert(_room);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        _roomEdit.name = name;
+                        _roomEdit.description = description;
+                        _roomEdit.size = size;
+                        RoomsOrm.Update(_roomEdit);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    _roomEdit.name = name;
-                    _roomEdit.description = description;
-                    _roomEdit.size = size;
-                    RoomsOrm.Update(_roomEdit);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    MessageBox.Show("Ya existe una sala con ese nombre.");
                 }
             }
         }

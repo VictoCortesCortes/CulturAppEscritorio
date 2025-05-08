@@ -28,6 +28,7 @@ namespace CulturAppEscritorio.Models
                         (from events in Orm.bd.Events
                          join type in Orm.bd.Type_event on events.type_id equals type.id
                          join room in Orm.bd.Rooms on events.room_id equals room.id
+                         where events.active == true
                          select new EventsComplete
                          {
                              event_id = events.id,
@@ -42,6 +43,15 @@ namespace CulturAppEscritorio.Models
                              room_id = room.id,
                              room = room.name
                          }).ToList();
+            return _events;
+        }
+
+        public static Events SelectById(int id)
+        {
+            Events _events =
+                        (from events in Orm.bd.Events
+                         where events.id == id && events.active == true
+                         select events).FirstOrDefault();
             return _events;
         }
 

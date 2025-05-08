@@ -13,6 +13,15 @@ namespace CulturAppEscritorio.Models
             return _rooms;
         }
 
+        public static Rooms SelectByName(string name)
+        {
+            Rooms _rooms =
+                        (from room in Orm.bd.Rooms
+                         where room.name == name
+                         select room).FirstOrDefault();
+            return _rooms;
+        }
+
         public static void Insert(Rooms room)
         {
             Orm.bd.Rooms.Add(room);
