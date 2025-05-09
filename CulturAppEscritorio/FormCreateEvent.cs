@@ -6,17 +6,24 @@ namespace CulturAppEscritorio
 {
     public partial class FormCreateEvent : Form
     {
-        int _actionMade;
-        EventsComplete _eventEdit;
+        private int _actionMade;
+        private EventsComplete _eventEdit;
         public FormCreateEvent(int actionMade, EventsComplete eventEdit)
         {
             InitializeComponent();
-            bindingSourceRoom.DataSource = RoomsOrm.SelectGlobal();
-            bindingSourceType.DataSource = TypeEventOrm.SelectGlobal();
+            bindingSourceRoom.DataSource = RoomsOrm.SelectGlobal(); // Cargar las habitaciones disponibles.
+            bindingSourceType.DataSource = TypeEventOrm.SelectGlobal(); // Cargar los tipos de evento disponibles.
             _actionMade = actionMade;
             _eventEdit = eventEdit;
         }
-        private void FormCreateEvent_Load(object sender, System.EventArgs e)
+
+        /// <summary>
+        /// Evento que se dispara cuando se carga el formulario.
+        /// Si se está editando un evento, llena los campos con la información del evento seleccionado.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el formulario).</param>
+        /// <param name="e">Los argumentos del evento.</param>
+        private void FormCreateEvent_Load(object sender, EventArgs e)
         {
             if (_actionMade == 1)
             {
@@ -34,33 +41,51 @@ namespace CulturAppEscritorio
             }
         }
 
+        /// <summary>
+        /// Evento que se dispara cuando el usuario ingresa un carácter en el campo de texto.
+        /// Permite solo la entrada de números en los campos relacionados con la capacidad o el precio.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el campo de texto).</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void roundedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsControl(e.KeyChar))
             {
-                return;
+                return; // Permitir controles como Backspace.
             }
 
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar)) // Solo permitir dígitos.
             {
                 e.Handled = true;
             }
         }
 
+        /// <summary>
+        /// Evento que se dispara cuando el usuario ingresa un carácter en el campo de texto de capacidad.
+        /// Permite solo la entrada de números en el campo de capacidad.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el campo de texto de capacidad).</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void roundedTextBoxCapacity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsControl(e.KeyChar))
             {
-                return;
+                return; // Permitir controles como Backspace.
             }
 
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar)) // Solo permitir dígitos.
             {
                 e.Handled = true;
             }
         }
 
-        private void roundedButtonSave_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Evento que se dispara cuando el usuario hace clic en el botón de guardar.
+        /// Valida los datos y crea o actualiza un evento dependiendo de la acción.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el botón de guardar).</param>
+        /// <param name="e">Los argumentos del evento.</param>
+        private void roundedButtonSave_Click(object sender, EventArgs e)
         {
             bool isPriceValid = int.TryParse(roundedTextBoxPrice.Texts.Trim(), out int price);
             bool isCapacityValid = int.TryParse(roundedTextBoxCapacity.Texts.Trim(), out int capacity);
@@ -71,7 +96,7 @@ namespace CulturAppEscritorio
             DateTime startDate = dateTimePickerStart.Value;
             DateTime endDate = dateTimePickerEnd.Value;
 
-            if (startDate >= endDate)
+            if (startDate >= endDate) // Verificar que la fecha de inicio sea antes de la fecha de fin.
             {
                 MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de fin.");
             }
@@ -83,7 +108,7 @@ namespace CulturAppEscritorio
                 }
                 else
                 {
-                    if (_actionMade == 0)
+                    if (_actionMade == 0) // Crear nuevo evento
                     {
                         Events eventExists = EventsOrm.SelectByName(title);
                         if (eventExists != null)
@@ -104,15 +129,15 @@ namespace CulturAppEscritorio
                                 room_id = room.id,
                                 active = true
                             };
-                            EventsOrm.Insert(events);
+                            EventsOrm.Insert(events); // Insertar el nuevo evento en la base de datos.
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
                     }
-                    else
+                    else // Editar evento existente
                     {
                         Events eventExists = EventsOrm.SelectByName(title);
-                        if (eventExists != null && eventExists.id != _eventEdit.event_id)
+                        if (eventExists != null && eventExists.id != _eventEdit.event_id) // Verificar que no exista un evento con el mismo nombre.
                         {
                             MessageBox.Show("Ya existe un evento con ese nombre.");
                         }
@@ -126,7 +151,7 @@ namespace CulturAppEscritorio
                             _eventEdit.price = price;
                             _eventEdit.type_id = type.id;
                             _eventEdit.room_id = room.id;
-                            EventsOrm.Update(_eventEdit);
+                            EventsOrm.Update(_eventEdit); // Actualizar el evento en la base de datos.
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
@@ -135,9 +160,15 @@ namespace CulturAppEscritorio
             }
         }
 
-        private void roundedButtonCancel_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Evento que se dispara cuando el usuario hace clic en el botón de cancelar.
+        /// Cierra el formulario sin realizar cambios.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el botón de cancelar).</param>
+        /// <param name="e">Los argumentos del evento.</param>
+        private void roundedButtonCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // Cerrar el formulario.
         }
     }
 }
