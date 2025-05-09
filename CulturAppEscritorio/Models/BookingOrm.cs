@@ -18,81 +18,128 @@ namespace CulturAppEscritorio.Models
     {
         public static List<BookingComplete> SelectGlobal()
         {
-            List<BookingComplete> _bookings =
-                        (from booking in Orm.bd.Booking
-                         join user in Orm.bd.Users on booking.user_id equals user.id
-                         join events in Orm.bd.Events on booking.event_id equals events.id
-                         where booking.active == true
-                         select new BookingComplete
-                         {
-                             user_id = user.id,
-                             user_name = user.name,
-                             event_id = events.id,
-                             event_title = events.title,
-                             quantity = booking.quantity
-                         }).ToList();
-            return _bookings;
+            try
+            {
+                List<BookingComplete> _bookings =
+                    (from booking in Orm.bd.Booking
+                     join user in Orm.bd.Users on booking.user_id equals user.id
+                     join events in Orm.bd.Events on booking.event_id equals events.id
+                     where booking.active == true
+                     select new BookingComplete
+                     {
+                         user_id = user.id,
+                         user_name = user.name,
+                         event_id = events.id,
+                         event_title = events.title,
+                         quantity = booking.quantity
+                     }).ToList();
+                return _bookings;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en BookingOrm SelectGlobal: " + ex.Message);
+                return new List<BookingComplete>();
+            }
         }
 
         public static List<BookingComplete> SelectByEvent(int event_id)
         {
-            List<BookingComplete> _bookings =
-                        (from booking in Orm.bd.Booking
-                         join user in Orm.bd.Users on booking.user_id equals user.id
-                         join events in Orm.bd.Events on booking.event_id equals events.id
-                         where booking.event_id == event_id && booking.active == true
-                         select new BookingComplete
-                         {
-                             user_id = user.id,
-                             user_name = user.name,
-                             event_id = events.id,
-                             event_title = events.title,
-                             quantity = booking.quantity
-                         }).ToList();
-            return _bookings;
+            try
+            {
+                List<BookingComplete> _bookings =
+                    (from booking in Orm.bd.Booking
+                     join user in Orm.bd.Users on booking.user_id equals user.id
+                     join events in Orm.bd.Events on booking.event_id equals events.id
+                     where booking.event_id == event_id && booking.active == true
+                     select new BookingComplete
+                     {
+                         user_id = user.id,
+                         user_name = user.name,
+                         event_id = events.id,
+                         event_title = events.title,
+                         quantity = booking.quantity
+                     }).ToList();
+                return _bookings;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en BookingOrm SelectByEvent: " + ex.Message);
+                return new List<BookingComplete>();
+            }
         }
 
         public static BookingComplete SelectByUserEvent(int user_id, int event_id)
         {
-            BookingComplete _booking =
-                        (from booking in Orm.bd.Booking
-                         join user in Orm.bd.Users on booking.user_id equals user.id
-                         join events in Orm.bd.Events on booking.event_id equals events.id
-                         where booking.user_id == user_id && booking.event_id == event_id && booking.active == true
-                         select new BookingComplete
-                         {
-                             user_id = user.id,
-                             user_name = user.name,
-                             event_id = events.id,
-                             event_title = events.title,
-                             quantity = booking.quantity
-                         }).FirstOrDefault();
-            return _booking;
+            try
+            {
+                BookingComplete _booking =
+                    (from booking in Orm.bd.Booking
+                     join user in Orm.bd.Users on booking.user_id equals user.id
+                     join events in Orm.bd.Events on booking.event_id equals events.id
+                     where booking.user_id == user_id && booking.event_id == event_id && booking.active == true
+                     select new BookingComplete
+                     {
+                         user_id = user.id,
+                         user_name = user.name,
+                         event_id = events.id,
+                         event_title = events.title,
+                         quantity = booking.quantity
+                     }).FirstOrDefault();
+                return _booking;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en BookingOrm SelectByUserEvent: " + ex.Message);
+                return null;
+            }
         }
 
         public static void Update(BookingComplete booking)
         {
-            var _existingBooking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);
-            if (_existingBooking != null)
+            try
             {
-                _existingBooking.quantity = booking.quantity;
-                Orm.bd.SaveChanges();
+                var _existingBooking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);
+                if (_existingBooking != null)
+                {
+                    _existingBooking.quantity = booking.quantity;
+                    Orm.bd.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en BookingOrm Update: " + ex.Message);
             }
         }
 
         public static void Delete(BookingComplete booking)
         {
-            var _booking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);
-            if (_booking != null)
+            try
             {
-                _booking.active = false;
-                Orm.bd.SaveChanges();
+                var _booking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);
+                if (_booking != null)
+                {
+                    _booking.active = false;
+                    Orm.bd.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en BookingOrm Delete: " + ex.Message);
             }
         }
+
         public static void Insert(Booking booking)
         {
-            Orm.bd.Booking.Add(booking);
-            Orm.bd.SaveChanges();
+            try
+            {
+                Orm.bd.Booking.Add(booking);
+                Orm.bd.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en BookingOrm Insert: " + ex.Message);
+            }
         }
     }
+
 }
