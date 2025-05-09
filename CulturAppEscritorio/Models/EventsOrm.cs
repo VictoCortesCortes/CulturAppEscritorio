@@ -18,8 +18,13 @@ namespace CulturAppEscritorio.Models
         public int room_id { get; set; }
         public string room { get; set; }
     }
+
     public static class EventsOrm
     {
+        /// <summary>
+        /// Obtiene todos los eventos activos de la base de datos, incluyendo su tipo y sala correspondientes.
+        /// </summary>
+        /// <returns>Lista de objetos <see cref="EventsComplete"/> con la información completa de los eventos.</returns>
         public static List<EventsComplete> SelectGlobal()
         {
             try
@@ -52,6 +57,11 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Obtiene un evento específico por su nombre.
+        /// </summary>
+        /// <param name="name">El nombre del evento a buscar.</param>
+        /// <returns>Un objeto <see cref="Events"/> que representa el evento, o null si no se encuentra.</returns>
         public static Events SelectByName(string name)
         {
             try
@@ -69,6 +79,11 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Obtiene un evento específico por su ID.
+        /// </summary>
+        /// <param name="id">El ID del evento a buscar.</param>
+        /// <returns>Un objeto <see cref="Events"/> que representa el evento, o null si no se encuentra.</returns>
         public static Events SelectById(int id)
         {
             try
@@ -86,6 +101,10 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Elimina un evento marcándolo como inactivo en la base de datos.
+        /// </summary>
+        /// <param name="events">El objeto <see cref="EventsComplete"/> que representa el evento a eliminar.</param>
         public static void Delete(EventsComplete events)
         {
             try
@@ -93,8 +112,8 @@ namespace CulturAppEscritorio.Models
                 var _event = Orm.bd.Events.FirstOrDefault(existingEvent => existingEvent.id == events.event_id);
                 if (_event != null)
                 {
-                    _event.active = false;
-                    Orm.bd.SaveChanges();
+                    _event.active = false;  // Marca el evento como inactivo
+                    Orm.bd.SaveChanges();  // Guarda los cambios en la base de datos
                 }
             }
             catch (Exception ex)
@@ -103,6 +122,10 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Actualiza los datos de un evento existente en la base de datos.
+        /// </summary>
+        /// <param name="_eventEdit">El objeto <see cref="EventsComplete"/> con los datos actualizados del evento.</param>
         public static void Update(EventsComplete _eventEdit)
         {
             try
@@ -118,7 +141,7 @@ namespace CulturAppEscritorio.Models
                     _event.price = _eventEdit.price;
                     _event.type_id = _eventEdit.type_id;
                     _event.room_id = _eventEdit.room_id;
-                    Orm.bd.SaveChanges();
+                    Orm.bd.SaveChanges();  // Guarda los cambios en la base de datos
                 }
             }
             catch (Exception ex)
@@ -127,12 +150,16 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Inserta un nuevo evento en la base de datos.
+        /// </summary>
+        /// <param name="events">El objeto <see cref="Events"/> con los datos del nuevo evento a insertar.</param>
         public static void Insert(Events events)
         {
             try
             {
-                Orm.bd.Events.Add(events);
-                Orm.bd.SaveChanges();
+                Orm.bd.Events.Add(events);  // Agrega el nuevo evento
+                Orm.bd.SaveChanges();  // Guarda los cambios en la base de datos
             }
             catch (Exception ex)
             {
@@ -140,5 +167,4 @@ namespace CulturAppEscritorio.Models
             }
         }
     }
-
 }
