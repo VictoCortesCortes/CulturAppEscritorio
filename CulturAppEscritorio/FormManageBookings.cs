@@ -16,6 +16,17 @@ namespace CulturAppEscritorio
         }
 
         /// <summary>
+        /// Evento que se dispara cuando el formulario se carga.
+        /// Carga todas las reservas disponibles en el formulario.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el formulario).</param>
+        /// <param name="e">Los argumentos del evento.</param>
+        private void FormManageTickets_Load(object sender, EventArgs e)
+        {
+            bindingSourceBooking.DataSource = BookingOrm.SelectGlobal();
+        }
+
+        /// <summary>
         /// Evento que se dispara cuando el usuario hace clic en el botón "Crear reserva".
         /// Abre el formulario para crear una nueva reserva.
         /// </summary>
@@ -84,17 +95,6 @@ namespace CulturAppEscritorio
             {
                 MessageBox.Show("Por favor, selecciona una reserva para eliminarla.");
             }
-        }
-
-        /// <summary>
-        /// Evento que se dispara cuando el formulario se carga.
-        /// Carga todas las reservas disponibles en el formulario.
-        /// </summary>
-        /// <param name="sender">El objeto que generó el evento (el formulario).</param>
-        /// <param name="e">Los argumentos del evento.</param>
-        private void FormManageTickets_Load(object sender, EventArgs e)
-        {
-            bindingSourceBooking.DataSource = BookingOrm.SelectGlobal();
         }
 
         /// <summary>

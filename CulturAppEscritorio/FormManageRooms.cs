@@ -16,6 +16,17 @@ namespace CulturAppEscritorio
         }
 
         /// <summary>
+        /// Evento que se dispara cuando el formulario se carga.
+        /// Carga todas las salas disponibles en el formulario.
+        /// </summary>
+        /// <param name="sender">El objeto que generó el evento (el formulario).</param>
+        /// <param name="e">Los argumentos del evento.</param>
+        private void FormManageRooms_Load(object sender, EventArgs e)
+        {
+            bindingSourceRoom.DataSource = RoomsOrm.SelectGlobal();
+        }
+
+        /// <summary>
         /// Evento que se dispara cuando el usuario hace clic en el botón "Crear sala".
         /// Abre el formulario para crear una nueva sala.
         /// </summary>
@@ -57,17 +68,6 @@ namespace CulturAppEscritorio
             {
                 MessageBox.Show("Por favor, selecciona una sala para editarla.");
             }
-        }
-
-        /// <summary>
-        /// Evento que se dispara cuando el formulario se carga.
-        /// Carga todas las salas disponibles en el formulario.
-        /// </summary>
-        /// <param name="sender">El objeto que generó el evento (el formulario).</param>
-        /// <param name="e">Los argumentos del evento.</param>
-        private void FormManageRooms_Load(object sender, EventArgs e)
-        {
-            bindingSourceRoom.DataSource = RoomsOrm.SelectGlobal();
         }
 
         /// <summary>
