@@ -165,6 +165,7 @@
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RoomsOrm.cs" />
+    <Compile Include="Models\TypeEventOrm.cs" />
     <Compile Include="Models\Type_event.cs">
       <DependentUpon>ModelCulturApp.tt</DependentUpon>
     </Compile>
@@ -231,6 +232,7 @@
     <None Include="Properties\DataSources\CulturAppEscritorio.Models.BookingComplete.datasource" />
     <None Include="Properties\DataSources\CulturAppEscritorio.Models.EventsComplete.datasource" />
     <None Include="Properties\DataSources\CulturAppEscritorio.Models.Rooms.datasource" />
+    <None Include="Properties\DataSources\CulturAppEscritorio.Models.Type_event.datasource" />
     <None Include="Properties\DataSources\CulturAppEscritorio.Models.Users.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

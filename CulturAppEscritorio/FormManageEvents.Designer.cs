@@ -34,13 +34,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingSourceEvents = new System.Windows.Forms.BindingSource(this.components);
             this.customPanel1 = new GigFinder.Controls.CustomPanel();
+            this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
             this.customComboBoxOrder = new GigFinder.Controls.CustomComboBox();
             this.roundedButtonDelete = new GigFinder.Controls.RoundedButton();
             this.roundedButtonEdit = new GigFinder.Controls.RoundedButton();
             this.roundedButtonCreate = new GigFinder.Controls.RoundedButton();
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
+            this.eventidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +52,8 @@
             this.roomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEvents)).BeginInit();
             this.customPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingSourceEvents
@@ -70,6 +71,67 @@
             this.customPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
             this.customPanel1.Size = new System.Drawing.Size(1148, 454);
             this.customPanel1.TabIndex = 39;
+            // 
+            // dataGridViewEvents
+            // 
+            this.dataGridViewEvents.AllowUserToAddRows = false;
+            this.dataGridViewEvents.AllowUserToDeleteRows = false;
+            this.dataGridViewEvents.AllowUserToResizeRows = false;
+            this.dataGridViewEvents.AutoGenerateColumns = false;
+            this.dataGridViewEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEvents.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewEvents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewEvents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Alkatra", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEvents.ColumnHeadersHeight = 35;
+            this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.eventidDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.startdateDataGridViewTextBoxColumn,
+            this.enddateDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.roomDataGridViewTextBoxColumn});
+            this.dataGridViewEvents.DataSource = this.bindingSourceEvents;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewEvents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewEvents.EnableHeadersVisualStyles = false;
+            this.dataGridViewEvents.GridColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.Location = new System.Drawing.Point(6, 0);
+            this.dataGridViewEvents.MultiSelect = false;
+            this.dataGridViewEvents.Name = "dataGridViewEvents";
+            this.dataGridViewEvents.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewEvents.RowHeadersVisible = false;
+            this.dataGridViewEvents.RowTemplate.Height = 25;
+            this.dataGridViewEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEvents.Size = new System.Drawing.Size(1136, 446);
+            this.dataGridViewEvents.TabIndex = 1;
             // 
             // customComboBoxOrder
             // 
@@ -173,65 +235,12 @@
             this.pictureBoxLogo.TabIndex = 33;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // dataGridViewEvents
+            // eventidDataGridViewTextBoxColumn
             // 
-            this.dataGridViewEvents.AllowUserToAddRows = false;
-            this.dataGridViewEvents.AllowUserToDeleteRows = false;
-            this.dataGridViewEvents.AllowUserToResizeRows = false;
-            this.dataGridViewEvents.AutoGenerateColumns = false;
-            this.dataGridViewEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewEvents.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewEvents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewEvents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Alkatra", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewEvents.ColumnHeadersHeight = 35;
-            this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.titleDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.startdateDataGridViewTextBoxColumn,
-            this.enddateDataGridViewTextBoxColumn,
-            this.capacityDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.roomDataGridViewTextBoxColumn});
-            this.dataGridViewEvents.DataSource = this.bindingSourceEvents;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("DM Serif Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewEvents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewEvents.EnableHeadersVisualStyles = false;
-            this.dataGridViewEvents.GridColor = System.Drawing.Color.White;
-            this.dataGridViewEvents.Location = new System.Drawing.Point(6, 0);
-            this.dataGridViewEvents.MultiSelect = false;
-            this.dataGridViewEvents.Name = "dataGridViewEvents";
-            this.dataGridViewEvents.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewEvents.RowHeadersVisible = false;
-            this.dataGridViewEvents.RowTemplate.Height = 25;
-            this.dataGridViewEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewEvents.Size = new System.Drawing.Size(1136, 446);
-            this.dataGridViewEvents.TabIndex = 1;
+            this.eventidDataGridViewTextBoxColumn.DataPropertyName = "event_id";
+            this.eventidDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.eventidDataGridViewTextBoxColumn.Name = "eventidDataGridViewTextBoxColumn";
+            this.eventidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -310,8 +319,8 @@
             this.Load += new System.EventHandler(this.FormManageEvents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEvents)).EndInit();
             this.customPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,6 +337,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.BindingSource bindingSourceEvents;
         private System.Windows.Forms.DataGridView dataGridViewEvents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;

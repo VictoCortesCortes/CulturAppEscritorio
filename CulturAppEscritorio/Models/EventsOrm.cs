@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CulturAppEscritorio.Models
 {
@@ -46,6 +44,15 @@ namespace CulturAppEscritorio.Models
             return _events;
         }
 
+        public static Events SelectByName(string name)
+        {
+            Events _events =
+                        (from events in Orm.bd.Events
+                         where events.title == name && events.active == true
+                         select events).FirstOrDefault();
+            return _events;
+        }
+
         public static Events SelectById(int id)
         {
             Events _events =
@@ -61,6 +68,23 @@ namespace CulturAppEscritorio.Models
             if (events != null)
             {
                 _event.active = false;
+                Orm.bd.SaveChanges();
+            }
+        }
+
+        public static void Update(EventsComplete _eventEdit)
+        {
+            var _event = Orm.bd.Events.FirstOrDefault(existingEvent => existingEvent.id == _eventEdit.event_id);
+            if (_event != null)
+            {
+                _event.title = _eventEdit.title;
+                _event.description = _eventEdit.description;
+                _event.start_datetime = _eventEdit.start_date;
+                _event.end_datetime = _eventEdit.end_date;
+                _event.capacity = _eventEdit.capacity;
+                _event.price = _eventEdit.price;
+                _event.type_id = _eventEdit.type_id;
+                _event.room_id = _eventEdit.room_id;
                 Orm.bd.SaveChanges();
             }
         }

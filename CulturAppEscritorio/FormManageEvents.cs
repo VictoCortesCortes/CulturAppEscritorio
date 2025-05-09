@@ -9,6 +9,7 @@ namespace CulturAppEscritorio
 {
     public partial class FormManageEvents : Form
     {
+        EventsComplete _eventEdit = null;
         public FormManageEvents()
         {
             InitializeComponent();
@@ -20,12 +21,30 @@ namespace CulturAppEscritorio
 
         private void roundedButtonCreate_Click(object sender, EventArgs e)
         {
-
+            FormCreateEvent formCreateEvent = new FormCreateEvent(0, _eventEdit);
+            if (formCreateEvent.ShowDialog() == DialogResult.OK)
+            {
+                bindingSourceEvents.DataSource = EventsOrm.SelectGlobal();
+                customComboBoxOrder.Texts = "Ordenar por";
+            }
         }
 
         private void roundedButtonEdit_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewEvents.SelectedRows.Count > 0)
+            {
+                _eventEdit = (EventsComplete)dataGridViewEvents.SelectedRows[0].DataBoundItem;
+                FormCreateEvent formCreateEvent = new FormCreateEvent(1, _eventEdit);
+                if (formCreateEvent.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceEvents.DataSource = EventsOrm.SelectGlobal();
+                    customComboBoxOrder.Texts = "Ordenar por";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un evento para editarlo.");
+            }
         }
 
         private void roundedButtonDelete_Click(object sender, EventArgs e)
