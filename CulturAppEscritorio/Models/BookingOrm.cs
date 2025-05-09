@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CulturAppEscritorio.Models
 {
@@ -14,8 +12,13 @@ namespace CulturAppEscritorio.Models
         public string event_title { get; set; }
         public int quantity { get; set; }
     }
+
     public static class BookingOrm
     {
+        /// <summary>
+        /// Obtiene todas las reservas activas de la base de datos, uniendo las tablas de usuarios y eventos.
+        /// </summary>
+        /// <returns>Lista de objetos <see cref="BookingComplete"/> que contienen la información de la reserva.</returns>
         public static List<BookingComplete> SelectGlobal()
         {
             try
@@ -42,6 +45,11 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Obtiene todas las reservas activas de un evento específico.
+        /// </summary>
+        /// <param name="event_id">ID del evento para el cual se desean obtener las reservas.</param>
+        /// <returns>Lista de objetos <see cref="BookingComplete"/> con las reservas del evento especificado.</returns>
         public static List<BookingComplete> SelectByEvent(int event_id)
         {
             try
@@ -68,6 +76,12 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Obtiene una reserva específica de un usuario para un evento determinado.
+        /// </summary>
+        /// <param name="user_id">ID del usuario cuya reserva se desea obtener.</param>
+        /// <param name="event_id">ID del evento para el cual se desea obtener la reserva.</param>
+        /// <returns>Objeto <see cref="BookingComplete"/> que contiene la información de la reserva, o null si no existe.</returns>
         public static BookingComplete SelectByUserEvent(int user_id, int event_id)
         {
             try
@@ -94,6 +108,10 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Actualiza la cantidad de una reserva existente en la base de datos.
+        /// </summary>
+        /// <param name="booking">Objeto <see cref="BookingComplete"/> que contiene la información de la reserva a actualizar.</param>
         public static void Update(BookingComplete booking)
         {
             try
@@ -102,7 +120,7 @@ namespace CulturAppEscritorio.Models
                 if (_existingBooking != null)
                 {
                     _existingBooking.quantity = booking.quantity;
-                    Orm.bd.SaveChanges();
+                    Orm.bd.SaveChanges();  // Guarda los cambios en la base de datos
                 }
             }
             catch (Exception ex)
@@ -111,6 +129,10 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Elimina una reserva estableciendo su estado como inactivo.
+        /// </summary>
+        /// <param name="booking">Objeto <see cref="BookingComplete"/> que representa la reserva a eliminar.</param>
         public static void Delete(BookingComplete booking)
         {
             try
@@ -118,8 +140,8 @@ namespace CulturAppEscritorio.Models
                 var _booking = Orm.bd.Booking.FirstOrDefault(existingBooking => existingBooking.event_id == booking.event_id && existingBooking.user_id == booking.user_id);
                 if (_booking != null)
                 {
-                    _booking.active = false;
-                    Orm.bd.SaveChanges();
+                    _booking.active = false;  // Marca la reserva como inactiva
+                    Orm.bd.SaveChanges();  // Guarda los cambios en la base de datos
                 }
             }
             catch (Exception ex)
@@ -128,12 +150,16 @@ namespace CulturAppEscritorio.Models
             }
         }
 
+        /// <summary>
+        /// Inserta una nueva reserva en la base de datos.
+        /// </summary>
+        /// <param name="booking">Objeto <see cref="Booking"/> que contiene la información de la nueva reserva.</param>
         public static void Insert(Booking booking)
         {
             try
             {
-                Orm.bd.Booking.Add(booking);
-                Orm.bd.SaveChanges();
+                Orm.bd.Booking.Add(booking);  // Agrega la nueva reserva
+                Orm.bd.SaveChanges();  // Guarda los cambios en la base de datos
             }
             catch (Exception ex)
             {
@@ -141,5 +167,4 @@ namespace CulturAppEscritorio.Models
             }
         }
     }
-
 }
