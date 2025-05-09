@@ -43,7 +43,7 @@ namespace CulturAppEscritorio
         /// <param name="e">Los argumentos del evento.</param>
         private void roundedButtonCancel_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cerrar el formulario.
+            this.Close();
         }
 
         /// <summary>
