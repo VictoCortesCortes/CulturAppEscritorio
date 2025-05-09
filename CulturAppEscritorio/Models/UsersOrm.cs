@@ -19,7 +19,7 @@ namespace CulturAppEscritorio.Models
             } 
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users Selectlogin: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm Selectlogin: {ex.Message}");
                 return null;
             }
             
@@ -37,7 +37,7 @@ namespace CulturAppEscritorio.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users SelectWithMail: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm SelectWithMail: {ex.Message}");
                 return null;
             }
         }
@@ -54,7 +54,7 @@ namespace CulturAppEscritorio.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users SelectGlobal: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm SelectGlobal: {ex.Message}");
                 return new List<Users>();
             } 
         }
@@ -68,7 +68,7 @@ namespace CulturAppEscritorio.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users Insert: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm Insert: {ex.Message}");
             }
             
         }
@@ -85,12 +85,12 @@ namespace CulturAppEscritorio.Models
                 }
                 else
                 {
-                    Console.WriteLine($"Error in Users user with ID {user.id} not found.");
+                    Console.WriteLine($"Error in UsersOrm user with ID {user.id} not found.");
                 }
             } 
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users Delete: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm Delete: {ex.Message}");
             }
         }
 
@@ -110,12 +110,12 @@ namespace CulturAppEscritorio.Models
                 }
                 else
                 {
-                    Console.WriteLine($"Error in Users user with ID {user.id} not found.");
+                    Console.WriteLine($"Error in UsersOrm user with ID {user.id} not found.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users Update: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm Update: {ex.Message}");
             } 
         }
         
@@ -135,12 +135,12 @@ namespace CulturAppEscritorio.Models
                 }
                 else
                 {
-                    Console.WriteLine($"Error in Users user with ID {user.id} not found.");
+                    Console.WriteLine($"Error in UsersOrm user with ID {user.id} not found.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in Users UpdateWithoutPass: {ex.Message}");
+                Console.WriteLine($"Error in UsersOrm UpdateWithoutPass: {ex.Message}");
             }
         }
     }
