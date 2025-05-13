@@ -15,7 +15,7 @@ namespace CulturAppEscritorio
             _actionMade = action;
             _bookingEdit = booking;
             bindingSourceEvent.DataSource = EventsOrm.SelectGlobal(); // Cargar los eventos disponibles.
-            bindingSourceUsers.DataSource = UsersOrm.SelectGlobal(); // Cargar los usuarios disponibles.
+            bindingSourceUsers.DataSource = UsersOrm.SelectGlobalBooking(); // Cargar los usuarios disponibles.
         }
 
         /// <summary>

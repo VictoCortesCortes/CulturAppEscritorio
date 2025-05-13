@@ -75,6 +75,27 @@ namespace CulturAppEscritorio.Models
         }
 
         /// <summary>
+        /// Obtiene todos los usuarios activos que no sean administradores.
+        /// </summary>
+        /// <returns>Lista de objetos <see cref="Users"/> que representan los usuarios activos en la base de datos.</returns>
+        public static List<Users> SelectGlobalBooking()
+        {
+            try
+            {
+                List<Users> _users =
+                        (from user in Orm.bd.Users
+                         where user.active == true && user.type != "super"
+                         select user).ToList();
+                return _users;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in UsersOrm SelectGlobalBooking: {ex.Message}");
+                return new List<Users>(); // Retorna una lista vacía en caso de error
+            }
+        }
+
+        /// <summary>
         /// Inserta un nuevo usuario en la base de datos.
         /// </summary>
         /// <param name="user">El objeto <see cref="Users"/> que contiene los datos del nuevo usuario.</param>
